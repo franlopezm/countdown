@@ -45,6 +45,18 @@ function Clock(props) {
 
 	return (
 		<div className="countdown">
+			<div className="youtube-box">
+				<iframe
+					title="Un destino"
+					width="250"
+					height="140"
+					src="https://www.youtube-nocookie.com/embed/playlist?list=PLtA0DJJ99-mASGLmaRIbWSSgEuftyzfw1&autoplay=1"
+					frameBorder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
+				/>
+			</div>
+
 			<h1>Cuenta atrás</h1>
 			<div className="date-box">
 				<p className="title"><strong>Fecha actual:</strong></p>
