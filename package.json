@@ -22,6 +22,8 @@
 		"url": "https://github.com/franlopezm/countdown/issues"
 	},
 	"dependencies": {
+		"moment": "^2.24.0",
+		"moment-timezone": "^0.5.27",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
 		"react-scripts": "3.2.0"
