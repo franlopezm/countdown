@@ -45,7 +45,7 @@ function Clock(props) {
 
 	return (
 		<div className="countdown">
-			<div className="youtube-box">
+			{/* <div className="youtube-box">
 				<iframe
 					title="Un destino"
 					width="250"
@@ -55,7 +55,7 @@ function Clock(props) {
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
 				/>
-			</div>
+			</div> */}
 
 			<h1>Cuenta atrás</h1>
 			<div className="date-box">
