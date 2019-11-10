@@ -1,0 +1,26 @@
+{
+  "name": "countdown",
+  "version": "1.0.0",
+  "description": "Countdown to an indicated date",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franlopezm/countdown.git"
+  },
+  "keywords": [
+    "react",
+    "countdown",
+    "moment",
+    "date",
+    "time"
+  ],
+  "author": "francisco lópez muñoz <frans.lopez.m@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franlopezm/countdown/issues"
+  },
+  "homepage": "https://github.com/franlopezm/countdown#readme"
+}
