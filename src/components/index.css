@@ -1,11 +1,15 @@
 body {
-	background: #FDFDFD;
+	background: #FAFAFA;
 	font-family: 'Quattrocento Sans', sans-serif;
 }
 
 #root {
 	display: flex;
     justify-content: center;
+}
+
+.youtube-box {
+	text-align: center;
 }
 
 .countdown {
