@@ -4,8 +4,8 @@ import 'moment-timezone'
 import "./index.css"
 
 const params = new URLSearchParams(document.location.search.substring(1))
-const END_DATE = params.get('endDate')
-const TIMEZONE = params.get('timezone').replace('-', "/")
+const END_DATE = params.get('endDate') || moment().format()
+const TIMEZONE = (params.get('timezone') || 'Europe/Berlin').replace('-', "/")
 
 const countDownEnd = moment(END_DATE).tz(TIMEZONE)
 
@@ -16,7 +16,6 @@ function tick(setDate) {
 function Clock(props) {
 	const [date, setDate] = useState(new Date())
 
-
 	useEffect(() => {
 		const timerId = setInterval(() => tick(setDate), 1000)
 
@@ -26,7 +25,7 @@ function Clock(props) {
 	})
 
 	// Get duration from diff dates
-	const duration = moment.duration(countDownEnd.diff(moment(date).tz('Europe/Moscow')))
+	const duration = moment.duration(countDownEnd.diff(moment(date)))
 
 	// Get days and subtract from duration
 	const days = parseInt(duration.asDays(), 10)
@@ -68,7 +67,12 @@ function Clock(props) {
 			</div>
 			<div className="date-box">
 				<p className="title"><strong>Faltan:</strong></p>
-				<p className="date">{days} días - {hours} horas - {minutes} minutos - {seconds} segundos</p>
+				<p className="date">
+					<span>{days} días</span>
+					<span>{hours} horas</span>
+					<span>{minutes} minutos</span>
+					<span>{seconds} segundos</span>
+				</p>
 			</div>
 		</div>
 	)
