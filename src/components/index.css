@@ -14,7 +14,7 @@ body {
 
 .countdown {
 	border-radius: 30px;
-    min-width: 350px;
+    min-width: 360px;
 	padding: 20px 10px;
 }
 
@@ -37,4 +37,8 @@ body {
 	font-family: 'Didact Gothic', sans-serif;
 	font-size: 16px;
 	margin: 5px 10px 10px 15px;
+}
+
+.countdown .date-box .date span {
+	margin-right: 12px;
 }
