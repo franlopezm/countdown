@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import 'moment-timezone'
-import "./index.css"
+import "./app.scss"
 
-const params = new URLSearchParams(document.location.search.substring(1))
-const END_DATE = params.get('endDate') || moment().format()
-const TIMEZONE = (params.get('timezone') || 'Europe/Berlin').replace('-', "/")
+import urlParams from '../utils/urlParams'
+import CountDownAndUp from './CountDownAndUp'
 
-const countDownEnd = moment(END_DATE).tz(TIMEZONE)
+const params = urlParams()
+const endDate = moment(params.endDate).tz(params.timezone)
+
 
 function tick(setDate) {
 	setDate(new Date())
@@ -24,26 +25,8 @@ function Clock(props) {
 		}
 	})
 
-	// Get duration from diff dates
-	const duration = moment.duration(countDownEnd.diff(moment(date)))
-
-	// Get days and subtract from duration
-	const days = parseInt(duration.asDays(), 10)
-	duration.subtract(moment.duration(days, 'days'))
-
-	// Get hours and subtract from duration
-	const hours = duration.hours()
-	duration.subtract(moment.duration(hours, 'hours'))
-
-	// Get minutes and subtract from duration
-	const minutes = duration.minutes()
-	duration.subtract(moment.duration(minutes, 'minutes'))
-
-	// Get seconds
-	const seconds = duration.seconds()
-
 	return (
-		<div className="countdown">
+		<div className="container">
 			{/* <div className="youtube-box">
 				<iframe
 					title="Un destino"
@@ -56,23 +39,36 @@ function Clock(props) {
 				/>
 			</div> */}
 
-			<h1>Cuenta atrás</h1>
-			<div className="date-box">
-				<p className="title"><strong>Fecha actual:</strong></p>
-				<p className="date">{date.toLocaleString().replace(/\//g, '-')}</p>
+			{/* <h1>Cuenta atrás</h1> */}
+
+			<div className="date_box">
+				<p className="date_box-title"><strong>Fecha actual:</strong></p>
+				<p className="date_box-date">{moment(date).format('DD-MM-YYYY HH:mm:ss')}</p>
 			</div>
-			<div className="date-box">
-				<p className="title"><strong>Fecha Final:</strong></p>
-				<p className="date">{countDownEnd.format('DD-MM-YYYY HH:mm:ss')}</p>
-			</div>
-			<div className="date-box">
-				<p className="title"><strong>Faltan:</strong></p>
-				<p className="date">
-					<span>{days} días</span>
-					<span>{hours} horas</span>
-					<span>{minutes} minutos</span>
-					<span>{seconds} segundos</span>
+
+			<div className="date_box">
+				<p className="date_box-title mb_0_5">
+					<strong>Tiempo restante:</strong>
+					<span>{endDate.format('DD-MM-YYYY HH:mm:ss')}</span>
 				</p>
+
+				<CountDownAndUp
+					endDate={endDate}
+					currentDate={date}
+				/>
+			</div>
+
+			<div className="date_box mt_0_8">
+				<p className="date_box-title mb_0_5">
+					<strong>Tiempo transcurrido:</strong>
+					<span>{moment(params.initDate).format('DD-MM-YYYY HH:mm:ss')}</span>
+				</p>
+
+				<CountDownAndUp
+					startDate={params.initDate}
+					currentDate={date}
+					className="count_down"
+				/>
 			</div>
 		</div>
 	)
