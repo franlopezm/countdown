@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import 'moment-timezone'
 import "./app.scss"
+import 'moment-timezone'
+import 'moment/locale/es'
 
 import urlParams from '../utils/urlParams'
 import CountDownAndUp from './CountDownAndUp'
 
+moment.locale('es')
+
 const params = urlParams()
 const endDate = moment(params.endDate).tz(params.timezone)
-
 
 function tick(setDate) {
 	setDate(new Date())
@@ -43,13 +45,13 @@ function Clock(props) {
 
 			<div className="date_box">
 				<p className="date_box-title"><strong>Fecha actual:</strong></p>
-				<p className="date_box-date">{moment(date).format('DD-MM-YYYY HH:mm:ss')}</p>
+				<p className="date_box-date">{moment(date).format('LLL')}</p>
 			</div>
 
 			<div className="date_box">
 				<p className="date_box-title mb_0_5">
 					<strong>Tiempo restante:</strong>
-					<span>{endDate.format('DD-MM-YYYY HH:mm:ss')}</span>
+					<span>({endDate.format('LLL')})</span>
 				</p>
 
 				<CountDownAndUp
@@ -61,7 +63,7 @@ function Clock(props) {
 			<div className="date_box mt_0_8">
 				<p className="date_box-title mb_0_5">
 					<strong>Tiempo transcurrido:</strong>
-					<span>{moment(params.initDate).format('DD-MM-YYYY HH:mm:ss')}</span>
+					<span>({moment(params.initDate).format('LLL')})</span>
 				</p>
 
 				<CountDownAndUp
