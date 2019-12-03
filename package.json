@@ -15,6 +15,7 @@
 		"date",
 		"time"
 	],
+	"homepage": "https://franlopezm.github.io/countdown",
 	"author": "francisco lópez muñoz <frans.lopez.m@gmail.com>",
 	"license": "MIT",
 	"bugs": {
@@ -32,7 +33,8 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"deploy-gh-pages": "npm run build && gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
