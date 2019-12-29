@@ -3,7 +3,7 @@ import React from 'react'
 
 import './countDownAndUp.scss'
 import normalizer from '../utils/normalizer'
-import diffDate from '../utils/diffDate'
+import DiffDate from '../utils/DiffDate'
 import NumberCard from './NumberCard'
 
 /**
@@ -14,11 +14,11 @@ const CountDownAndUp = ({ startDate, endDate, currentDate, className }) => {
 
 	let dateObj
 	if (endDate && initDate) {
-		dateObj = diffDate(endDate, initDate)
+		dateObj = new DiffDate(endDate, initDate)
 	} else {
-		dateObj = diffDate(currentDate, startDate)
+		dateObj = new DiffDate(currentDate, initDate)
 	}
-	const { years, months, days, hours, minutes, seconds } = dateObj
+	const { years, months, days, hours, minutes, seconds } = dateObj.getAllAndSubtract()
 
 	return (
 		<div className={`count_down_and_up${className ? ' ' + className : ''}`}>
