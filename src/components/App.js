@@ -1,79 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import moment from 'moment'
-import "./app.scss"
-import 'moment-timezone'
-import 'moment/locale/es'
+import { Switch, Route, Redirect } from "react-router-dom";
+import React from 'react'
 
-import urlParams from '../utils/urlParams'
-import CountDownAndUp from './CountDownAndUp'
+import Home from './Home'
+import Counters from './Counters'
 
-moment.locale('es')
 
-const params = urlParams()
-const endDate = moment(params.endDate).tz(params.timezone)
-
-function tick(setDate) {
-	setDate(new Date())
-}
-
-function Clock(props) {
-	const [date, setDate] = useState(new Date())
-
-	useEffect(() => {
-		const timerId = setInterval(() => tick(setDate), 1000)
-
-		return function cleanup() {
-			clearInterval(timerId)
-		}
-	})
-
+export default () => {
 	return (
-		<div className="container">
-			{/* <div className="youtube-box">
-				<iframe
-					title="Un destino"
-					width="250"
-					height="140"
-					src="https://www.youtube-nocookie.com/embed/playlist?list=PLtA0DJJ99-mASGLmaRIbWSSgEuftyzfw1&autoplay=1"
-					frameBorder="0"
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				/>
-			</div> */}
+		<Switch>
+			<Route exact path="/" component={Home} />
+			<Route exact path="/:id" component={Counters} />
 
-			{/* <h1>Cuenta atrás</h1> */}
-
-			<div className="date_box">
-				<p className="date_box-title"><strong>Fecha actual:</strong></p>
-				<p className="date_box-date">{moment(date).format('LLL')}</p>
-			</div>
-
-			<div className="date_box">
-				<p className="date_box-title mb_0_5">
-					<strong>Tiempo restante:</strong>
-					<span>({endDate.format('LLL')})</span>
-				</p>
-
-				<CountDownAndUp
-					endDate={endDate}
-					currentDate={date}
-				/>
-			</div>
-
-			<div className="date_box mt_0_8">
-				<p className="date_box-title mb_0_5">
-					<strong>Tiempo transcurrido:</strong>
-					<span>({moment(params.initDate).format('LLL')})</span>
-				</p>
-
-				<CountDownAndUp
-					startDate={params.initDate}
-					currentDate={date}
-					className="count_down"
-				/>
-			</div>
-		</div>
+			<Redirect to="/" />
+		</Switch>
 	)
 }
-
-export default Clock
