@@ -23,9 +23,6 @@ const getParamsFromBase64 = (base64Text, paramsSearch = {}) => {
 /**
  * Get params from url
  */
-export default () => {
-	const params = new URLSearchParams(document.location.search.substring(1))
-	const base64Params = params.get('datetimes')
-
+export default (base64Params) => {
 	return getParamsFromBase64(base64Params, { endDate: new Date(), initDate: new Date(), timezone: 'Europe/Berlin' })
 }
