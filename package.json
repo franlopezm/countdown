@@ -22,13 +22,12 @@
 		"url": "https://github.com/franlopezm/countdown/issues"
 	},
 	"dependencies": {
-		"moment": "^2.24.0",
-		"moment-timezone": "^0.5.27",
+		"luxon": "^1.22.0",
 		"prop-types": "^15.7.2",
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0",
+		"react": "^16.13.0",
+		"react-dom": "^16.13.0",
 		"react-router-dom": "^5.1.2",
-		"react-scripts": "3.3.0"
+		"react-scripts": "3.4.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -53,6 +52,6 @@
 		]
 	},
 	"devDependencies": {
-		"node-sass": "^4.13.0"
+		"node-sass": "^4.13.1"
 	}
 }
