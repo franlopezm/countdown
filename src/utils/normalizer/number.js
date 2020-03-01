@@ -1,17 +1,19 @@
 const addZero = (num, minDigit) => {
-	let simbol = ''
-	// Add simbol for negative numbers
-	if (num < 0) {
-		simbol = '-'
-		num *= -1
-	}
+    num = parseInt(num, 10)
 
-	const numString = (num).toString()
+    let simbol = ''
+    // Add simbol for negative numbers
+    if (num < 0) {
+        simbol = '-'
+        num *= -1
+    }
 
-	// add digits to the number
-	const addDigit = minDigit - numString.length
+    const numString = (num).toString()
 
-	return `${simbol}${'0'.repeat(addDigit)}${num}`
+    // add digits to the number
+    const addDigit = minDigit - numString.length
+
+    return `${simbol}${'0'.repeat(addDigit)}${num}`
 }
 
 exports.getTwoDigit = (num) => addZero(num, 2)
