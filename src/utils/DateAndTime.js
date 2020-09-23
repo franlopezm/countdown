@@ -26,9 +26,9 @@ export default class DateAndTime {
         if (this.isValid(dateTo)) return dateTo
 
         const date = DateTime.fromISO(dateTo, { zone: zone || 'local' })
-        if (this.isValid(date)) return date
+        if (date.isValid) return date
 
-        throw new TypeError('date format is invalid')
+        return DateTime.local()
     }
 
     /**

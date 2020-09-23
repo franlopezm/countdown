@@ -8,11 +8,11 @@ import CountDownAndUp from './CountDownAndUp'
 
 
 function tick(setDate) {
-    setDate(new DateAndTime(new Date().toISOString()))
+    setDate(new DateAndTime())
 }
 
 function Clock(props) {
-    const [date, setDate] = useState(new DateAndTime(new Date().toISOString()))
+    const [date, setDate] = useState(new DateAndTime())
     const [params, setParams] = useState({ initDate: null, endDate: null, timezone: null })
 
     useEffect(() => {
@@ -33,22 +33,10 @@ function Clock(props) {
         return function cleanup() {
             clearInterval(timerId)
         }
-    })
+    }, [])
 
     return (
         <div className="container">
-            {/* <div className="youtube-box">
-				<iframe
-					title="Un destino"
-					width="250"
-					height="140"
-					src="https://www.youtube-nocookie.com/embed/playlist?list=PLtA0DJJ99-mASGLmaRIbWSSgEuftyzfw1&autoplay=1"
-					frameBorder="0"
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				/>
-			</div> */}
-
             <div className="date_box">
                 <p className="date_box-title"><strong>Fecha actual:</strong></p>
                 <p className="date_box-date">{date.format()}</p>
