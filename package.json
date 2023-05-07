@@ -22,7 +22,7 @@
 		"url": "https://github.com/franlopezm/countdown/issues"
 	},
 	"dependencies": {
-		"luxon": "^1.25.0",
+		"luxon": "^1.28.1",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
