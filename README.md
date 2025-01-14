@@ -11,8 +11,9 @@ App that shows the time elapsed or remaining until a certain date
 ---
 
 ### Stack
-- pnpm
-- Vite
+- pnpm v10
+- Vite v6
 - Reactjs v19
-- Typescript
-- Luxon
+- Typescript v5
+- Tailwindcss v3
+- Luxon v3
