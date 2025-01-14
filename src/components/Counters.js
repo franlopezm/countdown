@@ -21,7 +21,9 @@ function Clock(props) {
 
         setParams({
             endDate: new DateAndTime(decodeParams.endDate, decodeParams.timezone),
-            initDate: new DateAndTime(decodeParams.initDate),
+            initDate: decodeParams.initDate
+                ? new DateAndTime(decodeParams.initDate)
+                : null,
             timezone: decodeParams.timezone,
             isLoading: false
         })
