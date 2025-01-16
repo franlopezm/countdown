@@ -1,9 +1,21 @@
+import { useEffect, useState } from 'react'
+
 import { DateAndTime } from '../../services/DateAndTime'
+import DateList from './DateList'
 
 const DateContainer = () => {
+  const [date, setDate] = useState(() => new DateAndTime())
 
-  const date = new DateAndTime("2025-01-25T23:55:00", 'Europe/Moscow')
-  console.log(date.durationFromDate(new DateAndTime("2025-01-12T00:24:00", 'Europe/Samara')))
+  useEffect(() => {
+    const timerId = setInterval(
+      () => setDate(new DateAndTime()),
+      1000
+    )
+
+    return function cleanup() {
+      clearInterval(timerId)
+    }
+  }, [setDate])
 
   return (
     <div>
@@ -13,6 +25,10 @@ const DateContainer = () => {
       <h3 className='text-lg font-normal text-slate-600 mt-1'>
         {date.format()}
       </h3>
+
+      <DateList
+        date={date}
+      />
     </div>
   )
 }
