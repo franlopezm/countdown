@@ -3,10 +3,10 @@ import DateContainer from './DateContainer'
 function App() {
   return (
     <div className='bg-slate-50 w-full h-screen'>
-      <div className='px-56 py-3 text-2xl font-medium shadow-md text-sky-950'>
+      <div className='px-10 md:px-32 xl:px-36 2xl:px-52 py-3 text-2xl font-medium shadow-md text-sky-950'>
         Coutdown
       </div>
-      <div className='px-56 py-8'>
+      <div className='px-10 md:px-32 xl:px-36 2xl:px-52 py-8'>
         <DateContainer />
       </div>
     </div>
