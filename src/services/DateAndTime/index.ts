@@ -56,7 +56,7 @@ export class DateAndTime {
    * Time elapsed between the current date and the indicated date
    */
   durationFromDate(date: DateAndTime): DurationFromDateResponse {
-    const utcFrom = date.date.toUTC()
+    const utcFrom = date.dateUTC
     const isAfter = utcFrom > this._utcDate
 
     const interval = isAfter
@@ -75,5 +75,9 @@ export class DateAndTime {
 
   get date(): DateTime {
     return this._date
+  }
+
+  get dateUTC(): DateTime {
+    return this._utcDate
   }
 }
