@@ -19,7 +19,7 @@ const DateItem = (props: DateItemProps) => {
 
   return (
     <div
-      className={`mb-3 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className}`}
+      className={`mb-4 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className}`}
     >
       <p className="font-bold text-sm text-sky-700">
         {title}
