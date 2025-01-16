@@ -9,7 +9,7 @@ export class DateAndTime {
   protected _date: DateTime
   protected _utcDate: DateTime
 
-  constructor(date: DateOption, zone?: string) {
+  constructor(date?: DateOption, zone?: string) {
     this._date = this.create(date, zone)
 
     this._utcDate = this.date.toUTC()
@@ -18,15 +18,17 @@ export class DateAndTime {
   /**
    * Create a datetime from a string
    */
-  protected create(date: DateOption, zone?: string): DateTime {
+  protected create(date?: DateOption, zone?: string): DateTime {
     if (this.isValid(date)) return date as DateTime
 
-    const datetime = DateTime.fromISO(
-      date as string,
-      { zone: zone || 'local' }
-    )
+    if (date) {
+      const datetime = DateTime.fromISO(
+        date as string,
+        { zone: zone || 'local' }
+      )
 
-    if (datetime.isValid) return datetime
+      if (datetime.isValid) return datetime
+    }
 
     return DateTime.local()
   }
@@ -34,7 +36,9 @@ export class DateAndTime {
   /**
    * Validate datetime
   */
-  protected isValid(date: DateOption): boolean {
+  protected isValid(date?: DateOption): boolean {
+    if (!date) return false
+
     return DateTime.isDateTime(date)
   }
 
