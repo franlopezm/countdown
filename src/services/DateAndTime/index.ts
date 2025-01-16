@@ -1,7 +1,6 @@
 import { DateTime, Interval } from 'luxon'
 import { DateOption, DurationFromDateResponse } from './interfaces'
 
-
 /**
  * class for Date and Time manipulation
  */
@@ -71,7 +70,7 @@ export class DateAndTime {
       isAfter,
       duration: interval
         .toDuration(
-          ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
+          ['years', 'months', 'days', 'hours', 'minutes', 'seconds', 'milliseconds']
         )
         .toObject()
     }
