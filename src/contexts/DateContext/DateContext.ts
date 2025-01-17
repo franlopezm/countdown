@@ -4,7 +4,6 @@ import { DateAndTime } from "../../services/DateAndTime"
 
 export interface DateContextItem {
   date: DateAndTime
-  timezone?: string
   isSince: boolean // When the value is true the date is in the past.
 }
 

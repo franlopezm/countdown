@@ -1,5 +1,6 @@
 import { ReactNode, useCallback, useEffect, useState } from "react"
 
+import dateStorage from "../../services/localStorage/dateStorage"
 import { DateAndTime } from "../../services/DateAndTime"
 import { DateContext, DateContextItem } from './DateContext'
 
@@ -8,21 +9,30 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(
     () => {
-      console.warn('Se debe añadir la lógica para recuperar las fechas desde el localstorage y desde la url')
-      // Ejemplo actual
-      setDates([{
-        date: new DateAndTime("2025-01-25T23:55:00", 'Europe/Moscow'),
-        isSince: false
-      }, {
-        date: new DateAndTime("2025-01-01T00:00:00", 'Europe/Moscow'),
-        isSince: true
-      }])
+      const data = dateStorage.findAll()
+
+      setDates(
+        data.map<DateContextItem>(elem => {
+          const { date, timezone, isSince } = elem
+
+          return {
+            date: new DateAndTime(date, timezone),
+            isSince
+          }
+        })
+      )
     }, []
   )
 
   const addDate = useCallback(
     (data: DateContextItem) => {
       setDates((dates) => dates.concat(data))
+
+      dateStorage.insertOne({
+        isSince: data.isSince,
+        date: data.date.isoDate,
+        timezone: data.date.zone
+      })
     }, []
   )
 
@@ -31,6 +41,8 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
       setDates((dates) => dates.filter(
         (_, idx) => idx !== position)
       )
+
+      dateStorage.removeOne(position)
     }, []
   )
 

@@ -84,4 +84,12 @@ export class DateAndTime {
   get dateUTC(): DateTime {
     return this._utcDate
   }
+
+  get zone(): string {
+    return this._date.zoneName || ''
+  }
+
+  get isoDate(): string {
+    return this._date.toISO({ includeOffset: false }) || ''
+  }
 }
