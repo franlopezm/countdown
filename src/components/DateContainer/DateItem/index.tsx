@@ -7,10 +7,11 @@ interface DateItemProps {
   dateText?: string
   durationObj: DurationFromDateResponse
   isDisabled?: boolean
+  isSince?: boolean
 }
 
 const DateItem = (props: DateItemProps) => {
-  const { title, dateText, durationObj, isDisabled = false } = props
+  const { title, dateText, durationObj, isDisabled = false, isSince } = props
   const { duration } = durationObj
 
   const className = isDisabled
@@ -38,31 +39,37 @@ const DateItem = (props: DateItemProps) => {
           title='Años'
           number={duration.years}
           isDisabled={isDisabled}
+          isSince={isSince}
         />
         <CardNumber
           title='Meses'
           number={duration.months}
           isDisabled={isDisabled}
+          isSince={isSince}
         />
         <CardNumber
           title='Días'
           number={duration.days}
           isDisabled={isDisabled}
+          isSince={isSince}
         />
         <CardNumber
           title='Horas'
           number={addLeftZero(duration.hours)}
           isDisabled={isDisabled}
+          isSince={isSince}
         />
         <CardNumber
           title='Minutos'
           number={addLeftZero(duration.minutes)}
           isDisabled={isDisabled}
+          isSince={isSince}
         />
         <CardNumber
           title='Segundos'
           number={addLeftZero(duration.seconds)}
           isDisabled={isDisabled}
+          isSince={isSince}
         />
       </div>
     </div>

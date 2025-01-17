@@ -2,14 +2,25 @@ interface CardNumberProps {
   title: string
   number?: string | number
   isDisabled?: boolean
+  isSince?: boolean
+}
+
+interface ClassNameParams {
+  isSince: boolean,
+  isDisabled: boolean
+}
+
+const getClassName = (params: ClassNameParams): string => {
+  const { isDisabled, isSince } = params
+  if (isDisabled) return 'bg-neutral-500'
+  if (isSince) return 'bg-sea-350'
+
+  return 'bg-green-350'
 }
 
 const CardNumber = (props: CardNumberProps) => {
-  const { title, number = 0, isDisabled = false } = props
-
-  const className = isDisabled
-    ? `bg-neutral-500`
-    : 'bg-green-350'
+  const { title, number = 0, isDisabled = false, isSince = false } = props
+  const className = getClassName({ isDisabled, isSince })
 
   return (
     <div className="p-1">

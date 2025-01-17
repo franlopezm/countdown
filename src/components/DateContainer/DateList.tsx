@@ -17,15 +17,20 @@ const DateList = (props: DateListProps) => {
       {
         dates.map((item, idx) => {
           const { date: dateEnd, isSince } = item
+
           const duration = DateAndTime.durationFromDate(date, dateEnd)
+          const title = isSince
+            ? 'Tiempo desde la fecha:'
+            : 'Tiempo hasta la fecha:'
 
           return (
             <DateItem
               key={idx.toString()}
-              title='Tiempo hasta la fecha:'
+              title={title}
               dateText={dateEnd.format()}
               durationObj={duration}
               isDisabled={false}
+              isSince={isSince}
             />
           )
         })
