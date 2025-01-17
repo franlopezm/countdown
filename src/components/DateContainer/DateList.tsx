@@ -17,7 +17,7 @@ const DateList = (props: DateListProps) => {
       {
         dates.map((item, idx) => {
           const { date: dateEnd, isSince } = item
-          const duration = dateEnd.durationFromDate(date)
+          const duration = DateAndTime.durationFromDate(date, dateEnd)
 
           return (
             <DateItem
