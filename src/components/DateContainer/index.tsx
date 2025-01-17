@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react'
-
-import { INTERVAL_TIME } from '../../config/constants'
-import { DateAndTime } from '../../services/DateAndTime'
+import useTimer from '../../hooks/useTimer'
 import DateList from './DateList'
 
 const DateContainer = () => {
-  const [date, setDate] = useState(() => new DateAndTime())
-
-  useEffect(() => {
-    const timerId = setInterval(
-      () => setDate(new DateAndTime()),
-      INTERVAL_TIME
-    )
-
-    return function cleanup() {
-      clearInterval(timerId)
-    }
-  }, [setDate])
+  const [date] = useTimer()
 
   return (
     <div>
