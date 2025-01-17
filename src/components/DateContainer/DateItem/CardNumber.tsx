@@ -1,6 +1,6 @@
 interface CardNumberProps {
-  title: string,
-  number?: string | number,
+  title: string
+  number?: string | number
   isDisabled?: boolean
 }
 

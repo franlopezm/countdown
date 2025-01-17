@@ -3,9 +3,9 @@ import { addLeftZero } from '../../../services/numberNormalizer'
 import CardNumber from './CardNumber'
 
 interface DateItemProps {
-  title: string,
-  dateText?: string,
-  durationObj: DurationFromDateResponse,
+  title: string
+  dateText?: string
+  durationObj: DurationFromDateResponse
   isDisabled?: boolean
 }
 

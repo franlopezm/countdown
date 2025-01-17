@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import { INTERVAL_TIME } from '../../config/constants'
 import { DateAndTime } from '../../services/DateAndTime'
 import DateList from './DateList'
 
@@ -9,7 +10,7 @@ const DateContainer = () => {
   useEffect(() => {
     const timerId = setInterval(
       () => setDate(new DateAndTime()),
-      1000
+      INTERVAL_TIME
     )
 
     return function cleanup() {
