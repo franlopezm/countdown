@@ -13,6 +13,9 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
       setDates([{
         date: new DateAndTime("2025-01-25T23:55:00", 'Europe/Moscow'),
         isSince: false
+      }, {
+        date: new DateAndTime("2025-01-01T00:00:00", 'Europe/Moscow'),
+        isSince: true
       }])
     }, []
   )
