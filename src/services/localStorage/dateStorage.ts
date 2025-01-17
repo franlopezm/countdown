@@ -23,9 +23,21 @@ export const findAll = (): DateStorageItem[] => {
 }
 
 export const insertOne = (item: DateStorageItem): void => {
+  const { date, isSince, timezone = '' } = item
+
   const list = findAll()
-  list.push(item)
-  save(list)
+
+  const isInList = list.some(elem => {
+    if (elem.date !== date) return false
+    if (elem.timezone !== timezone) return false
+
+    return elem.isSince === isSince
+  })
+
+  if (!isInList) {
+    list.push({ date, isSince, timezone })
+    save(list)
+  }
 }
 
 export const removeOne = (position: number): void => {
