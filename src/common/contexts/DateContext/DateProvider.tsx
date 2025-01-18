@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useEffect, useState } from "react"
 
-import dateStorage from "../../services/localStorage/dateStorage"
-import { DateAndTime } from "../../services/DateAndTime"
+import dateStorage from "../../../services/localStorage/dateStorage"
+import { DateAndTime } from "../../../services/DateAndTime"
 import { DateContext, DateContextItem } from './DateContext'
 
 export const DateProvider = ({ children }: { children: ReactNode }) => {

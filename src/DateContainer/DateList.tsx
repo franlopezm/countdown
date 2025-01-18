@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { DateContext } from '../contexts/DateContext/DateContext'
+import { DateContext } from '../common/contexts/DateContext/DateContext'
 import { DateAndTime } from '../services/DateAndTime'
 import DateItem from './DateItem'
 

@@ -4,7 +4,7 @@ import './index.css'
 
 import App from './App.tsx'
 import { RouterProvider } from './Router/context/RouterProvider.tsx'
-import { DateProvider } from './contexts/DateContext/DateProvider'
+import { DateProvider } from './common/contexts/DateContext/DateProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
