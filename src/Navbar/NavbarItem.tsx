@@ -11,10 +11,12 @@ interface NavbarItemProps {
 const NavbarItem = (props: NavbarItemProps) => {
   const { title, icon, to, isActive = false } = props
 
+  const className = isActive ? 'bg-slate-300' : ''
+
   return (
     <RouteLink to={to}>
       <div
-        className="text-xl mr-1 px-2 cursor-pointer flex items-center hover:bg-slate-300 hover:rounded"
+        className={`text-xl mr-1 px-2 cursor-pointer flex items-center rounded hover:bg-slate-300 ${className}`}
       >
         {
           icon && icon
