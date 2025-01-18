@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
-import { DateContext } from '../../contexts/DateContext/DateContext'
-import { DateAndTime } from '../../services/DateAndTime'
+import { DateContext } from '../contexts/DateContext/DateContext'
+import { DateAndTime } from '../services/DateAndTime'
 import DateItem from './DateItem'
 
 interface DateListProps {

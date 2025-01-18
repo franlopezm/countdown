@@ -1,4 +1,4 @@
-import useTimer from '../../hooks/useTimer'
+import useTimer from '../hooks/useTimer'
 import DateList from './DateList'
 
 const DateContainer = () => {

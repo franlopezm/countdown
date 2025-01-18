@@ -1,5 +1,5 @@
-import { DurationFromDateResponse } from '../../../services/DateAndTime/interfaces'
-import { addLeftZero } from '../../../services/numberNormalizer'
+import { DurationFromDateResponse } from '../../services/DateAndTime/interfaces'
+import { addLeftZero } from '../../services/numberNormalizer'
 import CardNumber from './CardNumber'
 
 interface DateItemProps {
