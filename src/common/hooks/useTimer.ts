@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
-import { INTERVAL_TIME } from "../config/constants"
-import { DateAndTime } from "../services/DateAndTime"
+import { INTERVAL_TIME } from "../../config/constants"
+import { DateAndTime } from "../../services/DateAndTime"
 
 const useTimer = () => {
   const [date, setDate] = useState(() => new DateAndTime())
