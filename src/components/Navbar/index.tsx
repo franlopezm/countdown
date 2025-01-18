@@ -1,3 +1,5 @@
+import HomeIcon from "../Icons/HomeIcon"
+import PlusIcon from "../Icons/PlusIcon"
 import NavbarItem from "./NavbarItem"
 
 const Navbar = () => {
@@ -11,9 +13,15 @@ const Navbar = () => {
       >
         <NavbarItem
           title="Inicio"
+          icon={
+            <HomeIcon size="size-5" className="mr-1.5" />
+          }
         />
         <NavbarItem
-          title="Nuevo"
+          title="Crear"
+          icon={
+            <PlusIcon size="size-5" className="mr-1" />
+          }
         />
       </div>
     </div>
