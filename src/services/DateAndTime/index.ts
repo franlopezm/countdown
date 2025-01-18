@@ -29,7 +29,7 @@ export class DateAndTime {
       if (datetime.isValid) return datetime
     }
 
-    return DateTime.local()
+    return DateTime.local().set({ millisecond: 0 })
   }
 
   /**
@@ -61,6 +61,7 @@ export class DateAndTime {
   static durationFromDate(currentDate: DateAndTime, date: DateAndTime): DurationFromDateResponse {
     const utcCurrent = currentDate._utcDate
     const utcFrom = date.dateUTC
+
     const isAfter = utcFrom > utcCurrent
 
     const interval = isAfter
@@ -68,10 +69,10 @@ export class DateAndTime {
       : Interval.fromDateTimes(utcFrom, utcCurrent)
 
     return {
-      isAfter,
+      isSince: !isAfter,
       duration: interval
         .toDuration(
-          ['years', 'months', 'days', 'hours', 'minutes', 'seconds', 'milliseconds']
+          ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
         )
         .toObject()
     }
