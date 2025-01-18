@@ -1,11 +1,11 @@
 import DateContainer from './DateContainer'
+import Navbar from './Navbar'
 
 function App() {
   return (
     <div className='bg-slate-50 w-full h-screen'>
-      <div className='px-10 md:px-32 xl:px-36 2xl:px-52 py-3 text-2xl font-medium shadow-md text-sky-950'>
-        Coutdown
-      </div>
+      <Navbar />
+
       <div className='px-10 md:px-32 xl:px-36 2xl:px-52 py-8'>
         <DateContainer />
       </div>

@@ -4,6 +4,8 @@ import DateList from './DateList'
 const DateContainer = () => {
   const [date] = useTimer()
 
+  // console.log('date', date.zone, date.isoDate)
+
   return (
     <div>
       <h2 className='font-medium text-base text-sky-700'>
