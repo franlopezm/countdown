@@ -6,7 +6,7 @@ interface RouteLinkProps {
   className?: string
 }
 
-const RouteLink = (props: RouteLinkProps) => {
+export const RouteLink = (props: RouteLinkProps) => {
   const { children, to, className = '' } = props
 
   const onClick = useCallback(
@@ -28,5 +28,3 @@ const RouteLink = (props: RouteLinkProps) => {
     </a>
   )
 }
-
-export default RouteLink

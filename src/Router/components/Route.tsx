@@ -1,19 +1,12 @@
-import { ReactNode } from "react"
-import useRouter from "../hooks/useRouter"
+import { ReactElement } from "react"
 
-interface RouteProps {
+export interface RouteProps {
   path: string
-  component: ReactNode
+  component: ReactElement
 }
 
-const Route = (props: RouteProps) => {
-  const { path, component } = props
-
-  const [currentPath] = useRouter()
-
-  if (path !== currentPath) return null
+export const Route = (props: RouteProps) => {
+  const { component } = props
 
   return component
 }
-
-export default Route

@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import RouteLink from "../Router/components/RouteLink"
+import { RouteLink } from "../Router/components"
 
 interface NavbarItemProps {
   title: string
