@@ -1,7 +1,8 @@
-import { useRouter } from "../Router"
-import HomeIcon from "../Icons/HomeIcon"
-import PlusIcon from "../Icons/PlusIcon"
-import NavbarItem from "./NavbarItem"
+import { ROUTES } from '../config/constants'
+import { useRouter } from '../Router'
+import HomeIcon from '../Icons/HomeIcon'
+import PlusIcon from '../Icons/PlusIcon'
+import NavbarItem from './NavbarItem'
 
 const Navbar = () => {
   const [path] = useRouter()
@@ -15,16 +16,16 @@ const Navbar = () => {
         className="ml-8 text-sky-900 flex"
       >
         <NavbarItem
-          to='/'
-          isActive={path === '/'}
+          to={ROUTES.home}
+          isActive={path === ROUTES.home}
           title="Inicio"
           icon={
             <HomeIcon size="size-5" className="mr-1.5" />
           }
         />
         <NavbarItem
-          to='/new'
-          isActive={path === '/new'}
+          to={ROUTES.new}
+          isActive={path === ROUTES.new}
           title="Crear"
           icon={
             <PlusIcon size="size-5" className="mr-1" />

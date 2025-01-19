@@ -1,3 +1,4 @@
+import { ROUTES } from '../config/constants'
 import LinkButton from '../Buttons/LinkButton'
 
 interface NotFoundTimerProps {
@@ -19,7 +20,7 @@ export const NotFoundTimer = (props: NotFoundTimerProps) => {
 
       <LinkButton
         title='Añadir temporizador'
-        to='/new'
+        to={ROUTES.new}
       />
     </ div>
   )

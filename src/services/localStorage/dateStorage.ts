@@ -1,5 +1,5 @@
-import { DATE_STORAGE_KEY } from "../../config/constants"
-import { TimeBetweenType } from "../DateAndTime/interfaces"
+import { DATE_STORAGE_KEY } from '../../config/constants'
+import { TimeBetweenType } from '../DateAndTime/interfaces'
 
 export interface DateStorageItem {
   date: string

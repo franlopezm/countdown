@@ -1,9 +1,9 @@
-import { DNS } from "../../config/constants"
-import { DateStorageItem } from "../../services/localStorage/dateStorage"
+import { DNS, ROUTES } from '../../config/constants'
+import { DateStorageItem } from '../../services/localStorage/dateStorage'
 
 const goTo = (path: string) => {
   window.history.pushState({}, '', path)
-  window.dispatchEvent(new PopStateEvent("popstate"))
+  window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
 const getViewPath = (params: DateStorageItem): string => {
@@ -13,7 +13,7 @@ const getViewPath = (params: DateStorageItem): string => {
     queryParams.push(`${key}=${value}`)
   })
 
-  return `/view?${queryParams.join('&')}`
+  return `${ROUTES.view}?${encodeURIComponent(queryParams.join('&'))}`
 }
 
 const getURL = (path: string): string => {
