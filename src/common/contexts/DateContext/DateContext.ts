@@ -9,12 +9,14 @@ export interface DateContextItem {
 
 export interface DateContextValues {
   dates: DateContextItem[]
+  dateSize: number
   addDate: (dateItem: DateContextItem) => void
   removeDate: (position: number) => void
 }
 
 export const DateContext = createContext<DateContextValues>({
   dates: [],
+  dateSize: 0,
   addDate: () => { },
   removeDate: () => { }
 })

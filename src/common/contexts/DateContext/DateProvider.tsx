@@ -50,6 +50,7 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
     <DateContext.Provider
       value={{
         dates,
+        dateSize: dates.length,
         addDate,
         removeDate
       }}
