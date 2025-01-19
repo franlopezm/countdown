@@ -4,7 +4,7 @@ import HomeView from './HomeView'
 
 function App() {
   return (
-    <div className='bg-slate-50 w-full h-screen'>
+    <div className='bg-white w-full h-screen'>
       <Navbar />
 
       <div className='px-10 md:px-32 xl:px-36 2xl:px-52 py-8'>
