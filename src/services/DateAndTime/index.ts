@@ -69,7 +69,7 @@ export class DateAndTime {
       : Interval.fromDateTimes(utcEnd, utcStart)
 
     return {
-      type: isUntil ? 'since' : 'until',
+      type: isUntil ? 'until' : 'since',
       duration: interval
         .toDuration(
           ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
