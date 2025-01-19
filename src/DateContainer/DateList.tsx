@@ -30,7 +30,6 @@ const DateList = (props: DateListProps) => {
               dateText={dateEnd.format()}
               durationObj={duration}
               isDisabled={false}
-              isSince={isSince}
             />
           )
         })
