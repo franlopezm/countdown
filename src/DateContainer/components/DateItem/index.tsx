@@ -1,3 +1,5 @@
+import CopyClipBoardButton from '../../../Buttons/CopyClipBoardButton'
+import FullScreenButton from '../../../Buttons/FullScreenButton'
 import TrashButton from '../../../Buttons/TrashButton'
 import { DurationObject } from '../../../services/DateAndTime/interfaces'
 import { addLeftZero } from '../../../services/numberNormalizer'
@@ -9,11 +11,14 @@ interface DateItemProps {
   duration: DurationObject
   isDisabled?: boolean
   onDelete?: () => void
+  shareUrl?: string
+  onFullScreen?: () => void
 }
 
 export const DateItem = (props: DateItemProps) => {
   const {
-    title, dateText, duration, isDisabled = false, onDelete
+    title, dateText, duration, isDisabled = false, onDelete,
+    shareUrl, onFullScreen
   } = props
 
   const className = isDisabled
@@ -70,14 +75,36 @@ export const DateItem = (props: DateItemProps) => {
       </div>
 
       {
-        onDelete ? (
+        onDelete || shareUrl || onFullScreen ? (
           <div
-            className='absolute top-4 right-4'
+            className='absolute top-3 right-4'
           >
-            <TrashButton
-              confirmTitle={`Está seguro de que desea eliminar el temporizador:\n\n${title}\n${dateText}\n`}
-              onClick={onDelete}
-            />
+            {
+              onFullScreen ? (
+                <FullScreenButton
+                  onClick={onFullScreen}
+                  size='size-5'
+                />
+              ) : null
+            }
+            {
+              shareUrl ? (
+                <CopyClipBoardButton
+                  textToCopy={shareUrl}
+                  title='Copiar enlace para compartir'
+                  size='size-5'
+                />
+              ) : null
+            }
+            {
+              onDelete ? (
+                <TrashButton
+                  confirmTitle={`Está seguro de que desea eliminar el temporizador:\n\n${title}\n${dateText}\n`}
+                  onClick={onDelete}
+                  size='size-5'
+                />
+              ) : null
+            }
           </div>
         ) : null
       }
