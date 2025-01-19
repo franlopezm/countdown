@@ -9,6 +9,9 @@ export default {
       colors: {
         green: { 350: '#79b37a' },
         sea: { 350: '#79b3b0' }
+      },
+      spacing: {
+        '35-percentage': '35.333333%'
       }
     },
   },

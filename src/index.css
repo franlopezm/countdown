@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .before-arrow-bottom-center {
+    @apply
+      before:content-[''] before:absolute
+      before:w-2.5 before:h-2.5
+      before:right-1/2 before:translate-x-1/2 before:rotate-45
+      before:-bottom-1/2 before:-translate-y-35-percentage
+      before:border-r-2 before:border-b-2 before:border-inherit
+      before:rounded-br-sm
+      before:bg-white
+  }
+}
