@@ -1,8 +1,9 @@
 import { ReactNode, useCallback, useEffect, useState } from "react"
 
-import dateStorage from "../../services/localStorage/dateStorage"
+import dateStorage, { DateStorageItem } from "../../services/localStorage/dateStorage"
 import { DateAndTime } from "../../services/DateAndTime"
 import { DateContext, DateContextItem } from './DateContext'
+import { routerUtils } from "../../Router"
 
 export const DateProvider = ({ children }: { children: ReactNode }) => {
   const [dates, setDates] = useState<DateContextItem[]>([])
@@ -13,11 +14,13 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
         const data = dateStorage.findAll()
 
         return data.map<DateContextItem>(elem => {
-          const { date, timezone, type } = elem
+          const { date, timezone, type, title } = elem
 
           return {
             date: new DateAndTime(date, timezone),
-            type
+            type,
+            title,
+            viewPath: routerUtils.getViewPath(elem)
           }
         })
       }
@@ -38,13 +41,18 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
 
   const addDate = useCallback(
     (data: DateContextItem) => {
-      setDates((dates) => dates.concat(data))
-
-      dateStorage.insertOne({
+      const item: DateStorageItem = {
         type: data.type,
         date: data.date.isoDate,
-        timezone: data.date.zone
-      })
+        timezone: data.date.zone,
+        title: data.title || ''
+      }
+
+      const viewPath = routerUtils.getViewPath(item)
+
+      setDates((dates) => dates.concat({ ...data, viewPath }))
+
+      dateStorage.insertOne(item)
     }, []
   )
 

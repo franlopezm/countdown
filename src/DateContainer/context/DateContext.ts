@@ -5,7 +5,9 @@ import { DateAndTime } from "../../services/DateAndTime"
 
 export interface DateContextItem {
   date: DateAndTime
-  type: TimeBetweenType // When the value is true the date is in the past.
+  type: TimeBetweenType
+  title: string
+  viewPath: string
 }
 
 export interface DateContextValues {

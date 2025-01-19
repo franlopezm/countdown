@@ -2,6 +2,8 @@ import { useDateContext } from '../hooks/useDateContext'
 import { DateAndTime } from '../../services/DateAndTime'
 import { DateItem } from './DateItem'
 import { NotFoundTimer } from '../../NotFoundTimer'
+import { useCallback } from 'react'
+import { routerUtils } from '../../Router'
 
 interface DateListProps {
   date: DateAndTime
@@ -10,6 +12,12 @@ interface DateListProps {
 export const DateList = (props: DateListProps) => {
   const { date } = props
   const { dates, dateSize, removeDate } = useDateContext()
+
+  const onFullScreen = useCallback(
+    (path: string) => {
+      routerUtils.goTo(path)
+    }, []
+  )
 
   return (
     <div className='mt-8 flex flex-wrap justify-start'>
@@ -22,7 +30,7 @@ export const DateList = (props: DateListProps) => {
       }
       {
         dates.map((item, idx) => {
-          const { date: itemDate, type: itemType } = item
+          const { date: itemDate, type: itemType, viewPath } = item
 
           const { duration, type } = DateAndTime.durationFromDate(date, itemDate)
 
@@ -38,6 +46,8 @@ export const DateList = (props: DateListProps) => {
               duration={duration}
               isDisabled={itemType !== type}
               onDelete={() => removeDate(idx)}
+              onFullScreen={() => onFullScreen(viewPath)}
+              shareUrl={routerUtils.getURL(viewPath)}
             />
           )
         })
