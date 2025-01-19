@@ -1,6 +1,6 @@
 import { ReactElement } from "react"
 
-import useRouter from "../hooks/useRouter"
+import { useRouter } from "../hooks/useRouter"
 import { RouteProps } from './Route'
 
 interface RouteSwitchProps {

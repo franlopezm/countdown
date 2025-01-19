@@ -1,12 +1,10 @@
-import { useContext } from "react"
-
-import { RouterContext } from "../Router/context/RouterContext"
+import { useRouter } from "../Router"
 import HomeIcon from "../Icons/HomeIcon"
 import PlusIcon from "../Icons/PlusIcon"
 import NavbarItem from "./NavbarItem"
 
 const Navbar = () => {
-  const { path } = useContext(RouterContext)
+  const [path] = useRouter()
 
   return (
     <div

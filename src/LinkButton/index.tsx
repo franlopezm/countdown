@@ -1,4 +1,4 @@
-import { RouteLink } from "../Router/components"
+import { RouteLink } from "../Router"
 
 type size = 'large' | 'medium'
 

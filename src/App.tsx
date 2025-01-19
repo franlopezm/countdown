@@ -1,4 +1,4 @@
-import { RouteSwitch, Route } from './Router/components'
+import { RouteSwitch, Route } from './Router'
 import DateContainer from './DateContainer'
 import Navbar from './Navbar'
 
