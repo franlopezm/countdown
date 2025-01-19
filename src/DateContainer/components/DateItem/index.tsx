@@ -1,4 +1,4 @@
-import TrashIcon from '../../../Icons/TrashIcon'
+import TrashButton from '../../../Buttons/TrashButton'
 import { DurationObject } from '../../../services/DateAndTime/interfaces'
 import { addLeftZero } from '../../../services/numberNormalizer'
 import CardNumber from './CardNumber'
@@ -19,16 +19,6 @@ export const DateItem = (props: DateItemProps) => {
   const className = isDisabled
     ? `bg-neutral-200`
     : ''
-
-  const onClickDelete = () => {
-    const isOk = confirm(
-      `Está seguro de que desea eliminar el temporizador:\n\n${title}\n${dateText}\n`
-    )
-
-    if (isOk && onDelete) {
-      onDelete()
-    }
-  }
 
   return (
     <div
@@ -84,16 +74,10 @@ export const DateItem = (props: DateItemProps) => {
           <div
             className='absolute top-4 right-4'
           >
-            <button
-              type='button'
-              className='text-slate-600 hover:text-red-800'
-              title='Eliminar'
-              onClick={onClickDelete}
-            >
-              <TrashIcon
-                size='size-5'
-              />
-            </button>
+            <TrashButton
+              confirmTitle={`Está seguro de que desea eliminar el temporizador:\n\n${title}\n${dateText}\n`}
+              onClick={onDelete}
+            />
           </div>
         ) : null
       }
