@@ -1,7 +1,7 @@
 import { useDateContext } from '../hooks/useDateContext'
 import { DateAndTime } from '../../services/DateAndTime'
 import { DateItem } from './DateItem'
-import LinkButton from '../../LinkButton'
+import { NotFoundTimer } from '../../NotFoundTimer'
 
 interface DateListProps {
   date: DateAndTime
@@ -15,20 +15,9 @@ export const DateList = (props: DateListProps) => {
     <div className='mt-8 flex flex-wrap justify-start'>
       {
         dateSize === 0 ? (
-          <div
-            className='w-full mt-16 text-center'
-          >
-            <p
-              className='mb-8 text-xl text-slate-700'
-            >
-              No se han encontrado temporizadores.
-            </p>
-
-            <LinkButton
-              title='Añadir temporizador'
-              to='/new'
-            />
-          </ div>
+          <NotFoundTimer
+            text='No se han encontrado temporizadores.'
+          />
         ) : null
       }
       {
