@@ -9,7 +9,7 @@ interface DateListProps {
 
 const DateList = (props: DateListProps) => {
   const { date } = props
-  const { dates, dateSize } = useDateContext()
+  const { dates, dateSize, removeDate } = useDateContext()
 
   return (
     <div className='mt-8 flex flex-wrap justify-start'>
@@ -48,6 +48,7 @@ const DateList = (props: DateListProps) => {
               dateText={itemDate.format()}
               duration={duration}
               isDisabled={itemType !== type}
+              onDelete={() => removeDate(idx)}
             />
           )
         })

@@ -9,10 +9,10 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(
     () => {
-      const data = dateStorage.findAll()
+      const findAndParse = (): DateContextItem[] => {
+        const data = dateStorage.findAll()
 
-      setDates(
-        data.map<DateContextItem>(elem => {
+        return data.map<DateContextItem>(elem => {
           const { date, timezone, type } = elem
 
           return {
@@ -20,7 +20,19 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
             type
           }
         })
-      )
+      }
+
+      setDates(findAndParse())
+
+      const onStorage = () => {
+        setDates(findAndParse())
+      }
+
+      window.addEventListener("storage", onStorage)
+
+      return () => {
+        window.removeEventListener("storage", onStorage)
+      }
     }, []
   )
 
