@@ -25,7 +25,8 @@ const CardNumber = (props: CardNumberProps) => {
         {title}
       </div>
       <div
-        className={`rounded shadow-md border border-slate-05 text-slate-700 ${className} text-xl tracking-wide p-1.5 text-center min-w-16`}
+        // shadow-md border border-slate-05
+        className={`rounded text-slate-700 ${className} text-xl tracking-wide p-1.5 text-center min-w-16`}
       >
         {number}
       </div>

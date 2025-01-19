@@ -1,6 +1,4 @@
-import { useContext } from 'react'
-
-import { DateContext } from '../common/contexts/DateContext/DateContext'
+import { useDateContext } from '../common/contexts/DateContext'
 import { DateAndTime } from '../services/DateAndTime'
 import DateItem from './DateItem'
 
@@ -10,7 +8,7 @@ interface DateListProps {
 
 const DateList = (props: DateListProps) => {
   const { date } = props
-  const { dates } = useContext(DateContext)
+  const { dates } = useDateContext()
 
   return (
     <div className='mt-8 flex flex-wrap justify-start'>
