@@ -33,10 +33,10 @@ const DateList = (props: DateListProps) => {
       }
       {
         dates.map((item, idx) => {
-          const { date: dateEnd, isSince } = item
+          const { date: dateEnd, type } = item
 
           const { duration } = DateAndTime.durationFromDate(date, dateEnd)
-          const title = isSince
+          const title = type === 'since'
             ? 'Tiempo desde la fecha:'
             : 'Tiempo hasta la fecha:'
 

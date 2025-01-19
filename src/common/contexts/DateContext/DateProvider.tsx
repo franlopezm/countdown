@@ -13,11 +13,11 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
 
       setDates(
         data.map<DateContextItem>(elem => {
-          const { date, timezone, isSince } = elem
+          const { date, timezone, type } = elem
 
           return {
             date: new DateAndTime(date, timezone),
-            isSince
+            type
           }
         })
       )
@@ -29,7 +29,7 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
       setDates((dates) => dates.concat(data))
 
       dateStorage.insertOne({
-        isSince: data.isSince,
+        type: data.type,
         date: data.date.isoDate,
         timezone: data.date.zone
       })

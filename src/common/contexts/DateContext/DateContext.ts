@@ -1,10 +1,11 @@
 import { createContext } from "react"
 
+import { TimeBetweenType } from "../../../services/DateAndTime/interfaces"
 import { DateAndTime } from "../../../services/DateAndTime"
 
 export interface DateContextItem {
   date: DateAndTime
-  isSince: boolean // When the value is true the date is in the past.
+  type: TimeBetweenType // When the value is true the date is in the past.
 }
 
 export interface DateContextValues {

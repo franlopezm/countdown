@@ -1,8 +1,9 @@
 import { DATE_STORAGE_KEY } from "../../config/constants"
+import { TimeBetweenType } from "../DateAndTime/interfaces"
 
 interface DateStorageItem {
   date: string
-  isSince: boolean // When the value is true the date is in the past.
+  type: TimeBetweenType // When the value is true the date is in the past.
   timezone: string
 }
 
@@ -23,7 +24,7 @@ const findAll = (): DateStorageItem[] => {
 }
 
 const insertOne = (item: DateStorageItem): void => {
-  const { date, isSince, timezone = '' } = item
+  const { date, type, timezone = '' } = item
 
   const list = findAll()
 
@@ -31,11 +32,11 @@ const insertOne = (item: DateStorageItem): void => {
     if (elem.date !== date) return false
     if (elem.timezone !== timezone) return false
 
-    return elem.isSince === isSince
+    return elem.type === type
   })
 
   if (!isInList) {
-    list.push({ date, isSince, timezone })
+    list.push({ date, type, timezone })
     save(list)
   }
 }

@@ -7,7 +7,6 @@ interface DateItemProps {
   dateText?: string
   duration: DurationObject
   isDisabled?: boolean
-  isSince?: boolean
 }
 
 const DateItem = (props: DateItemProps) => {
