@@ -1,9 +1,6 @@
-interface TrashIconProps {
-  size?: 'size-5' | 'size-6'
-  className?: string
-}
+import { IconProps } from "./interfaces"
 
-const TrashIcon = (props: TrashIconProps) => {
+const TrashIcon = (props: IconProps) => {
   const { size = 'size-6', className } = props
 
   return (

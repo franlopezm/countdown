@@ -1,10 +1,7 @@
-interface PlusIconProps {
-  size?: 'size-5' | 'size-6'
-  className?: string
-}
+import { IconProps } from "./interfaces"
 
-const PlusIcon = (props: PlusIconProps) => {
-  const { size = 'size-6', className = '' } = props
+const PlusIcon = (props: IconProps) => {
+  const { size = 'size-6', className } = props
 
   return (
     <div className={className}>

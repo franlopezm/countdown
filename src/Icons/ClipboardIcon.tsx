@@ -1,10 +1,7 @@
-interface ClipboardIconProps {
-  size?: 'size-5' | 'size-6'
-  className?: string
-}
+import { IconProps } from "./interfaces"
 
-const ClipboardIcon = (props: ClipboardIconProps) => {
-  const { size = 'size-6', className = '' } = props
+const ClipboardIcon = (props: IconProps) => {
+  const { size = 'size-6', className } = props
 
   return (
     <div className={className}>

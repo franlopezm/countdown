@@ -1,10 +1,7 @@
-interface FullScreenIconProps {
-  size?: 'size-5' | 'size-6'
-  className?: string
-}
+import { IconProps } from "./interfaces"
 
-const FullScreenIcon = (props: FullScreenIconProps) => {
-  const { size = 'size-6', className = '' } = props
+const FullScreenIcon = (props: IconProps) => {
+  const { size = 'size-6', className } = props
 
   return (
     <div className={className}>

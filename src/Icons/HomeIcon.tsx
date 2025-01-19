@@ -1,10 +1,7 @@
-interface HomeIconProps {
-  size?: 'size-5' | 'size-6'
-  className?: string
-}
+import { IconProps } from "./interfaces"
 
-const HomeIcon = (props: HomeIconProps) => {
-  const { size = 'size-6', className = '' } = props
+const HomeIcon = (props: IconProps) => {
+  const { size = 'size-6', className } = props
 
   return (
     <div className={className}>
