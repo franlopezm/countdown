@@ -7,13 +7,13 @@ const goTo = (path: string) => {
 }
 
 const getViewPath = (params: DateStorageItem): string => {
-  const queryParams: string[] = []
+  const queryParams = new URLSearchParams()
 
   Object.entries(params).forEach(([key, value]) => {
-    queryParams.push(`${key}=${value}`)
+    queryParams.append(key, value)
   })
 
-  return `${ROUTES.view}?${encodeURIComponent(queryParams.join('&'))}`
+  return `${ROUTES.view}?${queryParams.toString()}`
 }
 
 const getURL = (path: string): string => {
