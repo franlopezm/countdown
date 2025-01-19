@@ -1,12 +1,15 @@
+import { IconSize } from "../../Icons/interfaces"
 import TrashIcon from "../../Icons/TrashIcon"
+import IconButton from "../IconButton"
 
 interface TrashButtonProps {
   onClick: () => void
   confirmTitle?: string
+  size?: IconSize
 }
 
 const TrashButton = (props: TrashButtonProps) => {
-  const { onClick, confirmTitle } = props
+  const { onClick, confirmTitle, size } = props
 
   const onDelete = () => {
     const isOk = confirmTitle
@@ -17,16 +20,12 @@ const TrashButton = (props: TrashButtonProps) => {
   }
 
   return (
-    <button
-      type='button'
-      className='text-slate-600 hover:text-red-800'
-      title='Eliminar'
+    <IconButton
       onClick={onDelete}
-    >
-      <TrashIcon
-        size='size-5'
-      />
-    </button>
+      iconClassNames="hover:text-red-800"
+      icon={<TrashIcon size={size} />}
+      title="Eliminar"
+    />
   )
 }
 
