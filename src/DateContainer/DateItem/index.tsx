@@ -1,18 +1,17 @@
-import { DurationFromDateResponse } from '../../services/DateAndTime/interfaces'
+import { DurationObject } from '../../services/DateAndTime/interfaces'
 import { addLeftZero } from '../../services/numberNormalizer'
 import CardNumber from './CardNumber'
 
 interface DateItemProps {
   title: string
   dateText?: string
-  durationObj: DurationFromDateResponse
+  duration: DurationObject
   isDisabled?: boolean
   isSince?: boolean
 }
 
 const DateItem = (props: DateItemProps) => {
-  const { title, dateText, durationObj, isDisabled = false } = props
-  const { duration } = durationObj
+  const { title, dateText, duration, isDisabled = false } = props
 
   const className = isDisabled
     ? `bg-neutral-200`

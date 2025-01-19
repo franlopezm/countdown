@@ -58,18 +58,18 @@ export class DateAndTime {
   /**
    * Time elapsed between the current date and the indicated date
    */
-  static durationFromDate(currentDate: DateAndTime, date: DateAndTime): DurationFromDateResponse {
-    const utcCurrent = currentDate._utcDate
-    const utcFrom = date.dateUTC
+  static durationFromDate(start: DateAndTime, end: DateAndTime): DurationFromDateResponse {
+    const utcStart = start.dateUTC
+    const utcEnd = end.dateUTC
 
-    const isAfter = utcFrom > utcCurrent
+    const isUntil = utcEnd > utcStart
 
-    const interval = isAfter
-      ? Interval.fromDateTimes(utcCurrent, utcFrom)
-      : Interval.fromDateTimes(utcFrom, utcCurrent)
+    const interval = isUntil
+      ? Interval.fromDateTimes(utcStart, utcEnd)
+      : Interval.fromDateTimes(utcEnd, utcStart)
 
     return {
-      isSince: !isAfter,
+      type: isUntil ? 'since' : 'until',
       duration: interval
         .toDuration(
           ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
