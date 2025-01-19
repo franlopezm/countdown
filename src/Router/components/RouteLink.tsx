@@ -1,4 +1,5 @@
 import { MouseEvent, ReactNode, useCallback } from "react"
+import { routerUtils } from "../utils"
 
 interface RouteLinkProps {
   to: string
@@ -13,8 +14,7 @@ export const RouteLink = (props: RouteLinkProps) => {
     (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
 
-      window.history.pushState({}, '', to)
-      window.dispatchEvent(new PopStateEvent("popstate"))
+      routerUtils.goTo(to)
     }, [to]
   )
 
