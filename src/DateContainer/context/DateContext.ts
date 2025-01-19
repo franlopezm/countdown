@@ -1,7 +1,7 @@
 import { createContext } from "react"
 
-import { TimeBetweenType } from "../../../services/DateAndTime/interfaces"
-import { DateAndTime } from "../../../services/DateAndTime"
+import { TimeBetweenType } from "../../services/DateAndTime/interfaces"
+import { DateAndTime } from "../../services/DateAndTime"
 
 export interface DateContextItem {
   date: DateAndTime

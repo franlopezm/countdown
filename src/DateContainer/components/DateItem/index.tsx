@@ -1,6 +1,6 @@
-import TrashIcon from '../../Icons/TrashIcon'
-import { DurationObject } from '../../services/DateAndTime/interfaces'
-import { addLeftZero } from '../../services/numberNormalizer'
+import TrashIcon from '../../../Icons/TrashIcon'
+import { DurationObject } from '../../../services/DateAndTime/interfaces'
+import { addLeftZero } from '../../../services/numberNormalizer'
 import CardNumber from './CardNumber'
 
 interface DateItemProps {
@@ -11,7 +11,7 @@ interface DateItemProps {
   onDelete?: () => void
 }
 
-const DateItem = (props: DateItemProps) => {
+export const DateItem = (props: DateItemProps) => {
   const {
     title, dateText, duration, isDisabled = false, onDelete
   } = props
@@ -100,5 +100,3 @@ const DateItem = (props: DateItemProps) => {
     </div>
   )
 }
-
-export default DateItem

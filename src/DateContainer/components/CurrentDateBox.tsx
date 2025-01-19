@@ -1,10 +1,10 @@
-import { DateAndTime } from '../services/DateAndTime'
+import { DateAndTime } from '../../services/DateAndTime'
 
-interface CurrentDateProps {
+interface CurrentDateBoxProps {
   date: DateAndTime
 }
 
-const CurrentDate = (props: CurrentDateProps) => {
+export const CurrentDateBox = (props: CurrentDateBoxProps) => {
   const { date } = props
 
   return (
@@ -18,5 +18,3 @@ const CurrentDate = (props: CurrentDateProps) => {
     </div>
   )
 }
-
-export default CurrentDate

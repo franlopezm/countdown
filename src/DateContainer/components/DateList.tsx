@@ -1,13 +1,13 @@
-import { useDateContext } from '../common/contexts/DateContext'
-import { DateAndTime } from '../services/DateAndTime'
-import LinkButton from '../LinkButton'
-import DateItem from './DateItem'
+import { useDateContext } from '../hooks/useDateContext'
+import { DateAndTime } from '../../services/DateAndTime'
+import { DateItem } from './DateItem'
+import LinkButton from '../../LinkButton'
 
 interface DateListProps {
   date: DateAndTime
 }
 
-const DateList = (props: DateListProps) => {
+export const DateList = (props: DateListProps) => {
   const { date } = props
   const { dates, dateSize, removeDate } = useDateContext()
 
@@ -56,5 +56,3 @@ const DateList = (props: DateListProps) => {
     </div>
   )
 }
-
-export default DateList

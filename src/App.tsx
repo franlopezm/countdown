@@ -1,6 +1,6 @@
 import { RouteSwitch, Route } from './Router'
-import DateContainer from './DateContainer'
 import Navbar from './Navbar'
+import HomeView from './HomeView'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <RouteSwitch>
           <Route
             path='/'
-            component={<DateContainer />}
+            component={<HomeView />}
           />
           <Route
             path='/new'

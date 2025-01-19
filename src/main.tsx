@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 import { RouterProvider } from './Router'
-import { DateProvider } from './common/contexts/DateContext'
+import { DateProvider } from './DateContainer'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(
