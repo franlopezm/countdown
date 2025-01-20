@@ -1,12 +1,13 @@
+import { DurationObject, TimeBetweenType } from '../../../services/DateAndTime/interfaces'
+import { addLeftZero } from '../../../services/numberNormalizer'
 import CopyClipBoardButton from '../../../Buttons/CopyClipBoardButton'
 import FullScreenButton from '../../../Buttons/FullScreenButton'
 import TrashButton from '../../../Buttons/TrashButton'
-import { DurationObject } from '../../../services/DateAndTime/interfaces'
-import { addLeftZero } from '../../../services/numberNormalizer'
 import CardNumber from './CardNumber'
 
 interface DateItemProps {
-  title: string
+  title?: string
+  type?: TimeBetweenType
   dateText?: string
   duration: DurationObject
   isDisabled?: boolean
@@ -15,22 +16,32 @@ interface DateItemProps {
   onFullScreen?: () => void
 }
 
+const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): string => {
+  if (title) return title
+
+  return type === 'since'
+    ? 'Tiempo desde la fecha:'
+    : 'Tiempo hasta la fecha:'
+}
+
 export const DateItem = (props: DateItemProps) => {
   const {
     title, dateText, duration, isDisabled = false, onDelete,
-    shareUrl, onFullScreen
+    shareUrl, onFullScreen, type
   } = props
 
   const className = isDisabled
     ? 'bg-neutral-200'
     : ''
 
+  const titleText = getTitle({ title, type })
+
   return (
     <div
       className={`mb-4 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className}`}
     >
       <p className="font-bold text-sm text-sky-700">
-        {title}
+        {titleText}
       </p>
       {
         dateText

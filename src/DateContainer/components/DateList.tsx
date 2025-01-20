@@ -31,19 +31,16 @@ export const DateList = (props: DateListProps) => {
       {
         dates.map(item => {
           const {
-            date: itemDate, type: itemType, viewPath, id
+            date: itemDate, type: itemType, viewPath, id, title
           } = item
 
           const { duration, type } = DateAndTime.durationFromDate(date, itemDate)
-
-          const title = itemType === 'since'
-            ? 'Tiempo desde la fecha:'
-            : 'Tiempo hasta la fecha:'
 
           return (
             <DateItem
               key={id}
               title={title}
+              type={itemType}
               dateText={itemDate.format()}
               duration={duration}
               isDisabled={itemType !== type}
