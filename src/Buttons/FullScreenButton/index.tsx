@@ -1,18 +1,27 @@
-import { IconSize } from "../../Icons/interfaces"
-import FullScreenIcon from "../../Icons/FullScreenIcon"
-import IconButton from "../IconButton"
+import { useCallback } from 'react'
+
+import { routerUtils } from '../../Router'
+import { IconSize } from '../../Icons/interfaces'
+import FullScreenIcon from '../../Icons/FullScreenIcon'
+import IconButton from '../IconButton'
 
 interface FullScreenButtonProps {
-  onClick: () => void
+  path: string
   size?: IconSize
 }
 
 const FullScreenButton = (props: FullScreenButtonProps) => {
-  const { onClick, size } = props
+  const { path, size } = props
+
+  const onFullScreen = useCallback(
+    () => {
+      routerUtils.goTo(path)
+    }, [path]
+  )
 
   return (
     <IconButton
-      onClick={onClick}
+      onClick={onFullScreen}
       iconClassNames="hover:text-sky-700"
       icon={<FullScreenIcon size={size} />}
       title='Ver a pantalla completa'

@@ -6,14 +6,14 @@ import TrashButton from '../../../Buttons/TrashButton'
 import CardNumber from './CardNumber'
 
 interface DateItemProps {
+  duration: DurationObject
   title?: string
   type?: TimeBetweenType
   dateText?: string
-  duration: DurationObject
+  fullScreenPath?: string
   isDisabled?: boolean
   onDelete?: () => void
   shareUrl?: string
-  onFullScreen?: () => void
 }
 
 const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): string => {
@@ -27,7 +27,7 @@ const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): 
 export const DateItem = (props: DateItemProps) => {
   const {
     title, dateText, duration, isDisabled = false, onDelete,
-    shareUrl, onFullScreen, type
+    shareUrl, type, fullScreenPath
   } = props
 
   const className = isDisabled
@@ -86,14 +86,14 @@ export const DateItem = (props: DateItemProps) => {
       </div>
 
       {
-        onDelete || shareUrl || onFullScreen ? (
+        onDelete || shareUrl || fullScreenPath ? (
           <div
             className='absolute top-3 right-4'
           >
             {
-              onFullScreen ? (
+              fullScreenPath ? (
                 <FullScreenButton
-                  onClick={onFullScreen}
+                  path={fullScreenPath}
                   size='size-5'
                 />
               ) : null
