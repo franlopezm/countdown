@@ -1,12 +1,17 @@
+import { v4 as uuid } from 'uuid'
+
 import { DATE_STORAGE_KEY } from '../../config/constants'
 import { TimeBetweenType } from '../DateAndTime/interfaces'
 
 export interface DateStorageItem {
+  id: string
   date: string
   type: TimeBetweenType
   timezone: string
   title: string
 }
+
+export type DateStorageItemCreate = Omit<DateStorageItem, 'id'>
 
 const save = (data: DateStorageItem[]): void => {
   localStorage.setItem(DATE_STORAGE_KEY, JSON.stringify(data))
@@ -24,28 +29,26 @@ const findAll = (): DateStorageItem[] => {
   }
 }
 
-const insertOne = (item: DateStorageItem): void => {
-  const { date, type, timezone = '', title } = item
+const insertOne = (item: DateStorageItemCreate): DateStorageItem => {
+  const { date, type, timezone, title } = item
+
+  const data = {
+    date, type, timezone, title,
+    id: uuid()
+  }
 
   const list = findAll()
+  list.push(data)
 
-  const isInList = list.some(elem => {
-    if (elem.date !== date) return false
-    if (elem.timezone !== timezone) return false
-    if (elem.title !== title) return false
+  save(list)
 
-    return elem.type === type
-  })
-
-  if (!isInList) {
-    list.push({ date, type, timezone, title })
-    save(list)
-  }
+  return data
 }
 
-const removeOne = (position: number): void => {
+const removeOne = (id: string): void => {
   const list = findAll()
-  list.splice(position, 1)
+    .filter(elem => elem.id !== id)
+
   save(list)
 }
 

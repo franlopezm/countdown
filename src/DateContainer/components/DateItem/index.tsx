@@ -22,7 +22,7 @@ export const DateItem = (props: DateItemProps) => {
   } = props
 
   const className = isDisabled
-    ? `bg-neutral-200`
+    ? 'bg-neutral-200'
     : ''
 
   return (

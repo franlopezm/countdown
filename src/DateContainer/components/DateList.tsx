@@ -29,8 +29,10 @@ export const DateList = (props: DateListProps) => {
         ) : null
       }
       {
-        dates.map((item, idx) => {
-          const { date: itemDate, type: itemType, viewPath } = item
+        dates.map(item => {
+          const {
+            date: itemDate, type: itemType, viewPath, id
+          } = item
 
           const { duration, type } = DateAndTime.durationFromDate(date, itemDate)
 
@@ -40,12 +42,12 @@ export const DateList = (props: DateListProps) => {
 
           return (
             <DateItem
-              key={idx.toString()}
+              key={id}
               title={title}
               dateText={itemDate.format()}
               duration={duration}
               isDisabled={itemType !== type}
-              onDelete={() => removeDate(idx)}
+              onDelete={() => removeDate(id)}
               onFullScreen={() => onFullScreen(viewPath)}
               shareUrl={routerUtils.getURL(viewPath)}
             />
