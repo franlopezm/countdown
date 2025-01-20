@@ -2,6 +2,7 @@ import { ROUTES } from './config/constants'
 import { RouteSwitch, Route } from './Router'
 import Navbar from './Navbar'
 import HomeView from './HomeView'
+import FullScreenView from './FullScreenView'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           />
           <Route
             path={ROUTES.view}
-            component={<div>Vista</div>}
+            component={<FullScreenView />}
           />
         </RouteSwitch>
       </div>

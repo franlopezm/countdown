@@ -4,6 +4,7 @@ import CopyClipBoardButton from '../../../Buttons/CopyClipBoardButton'
 import FullScreenButton from '../../../Buttons/FullScreenButton'
 import TrashButton from '../../../Buttons/TrashButton'
 import CardNumber from './CardNumber'
+import { routerUtils } from '../../../Router'
 
 interface DateItemProps {
   duration: DurationObject
@@ -13,7 +14,7 @@ interface DateItemProps {
   fullScreenPath?: string
   isDisabled?: boolean
   onDelete?: () => void
-  shareUrl?: string
+  sharePath?: string
 }
 
 const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): string => {
@@ -27,7 +28,7 @@ const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): 
 export const DateItem = (props: DateItemProps) => {
   const {
     title, dateText, duration, isDisabled = false, onDelete,
-    shareUrl, type, fullScreenPath
+    sharePath, type, fullScreenPath
   } = props
 
   const className = isDisabled
@@ -86,7 +87,7 @@ export const DateItem = (props: DateItemProps) => {
       </div>
 
       {
-        onDelete || shareUrl || fullScreenPath ? (
+        onDelete || sharePath || fullScreenPath ? (
           <div
             className='absolute top-3 right-4'
           >
@@ -99,9 +100,9 @@ export const DateItem = (props: DateItemProps) => {
               ) : null
             }
             {
-              shareUrl ? (
+              sharePath ? (
                 <CopyClipBoardButton
-                  textToCopy={shareUrl}
+                  textToCopy={routerUtils.getURL(sharePath)}
                   title='Copiar enlace para compartir'
                   size='size-5'
                 />

@@ -2,7 +2,6 @@ import { useDateContext } from '../hooks/useDateContext'
 import { DateAndTime } from '../../services/DateAndTime'
 import { DateItem } from './DateItem'
 import { NotFoundTimer } from '../../NotFoundTimer'
-import { routerUtils } from '../../Router'
 
 interface DateListProps {
   date: DateAndTime
@@ -39,7 +38,7 @@ export const DateList = (props: DateListProps) => {
               duration={duration}
               isDisabled={itemType !== type}
               onDelete={() => removeDate(id)}
-              shareUrl={routerUtils.getURL(viewPath)}
+              sharePath={viewPath}
             />
           )
         })

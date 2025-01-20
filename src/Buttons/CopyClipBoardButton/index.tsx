@@ -1,8 +1,8 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState } from 'react'
 
-import { IconSize } from "../../Icons/interfaces"
-import ClipboardIcon from "../../Icons/ClipboardIcon"
-import IconButton from "../IconButton"
+import { IconSize } from '../../Icons/interfaces'
+import ClipboardIcon from '../../Icons/ClipboardIcon'
+import IconButton from '../IconButton'
 
 interface CopyClipBoardButtonProps {
   textToCopy: string
