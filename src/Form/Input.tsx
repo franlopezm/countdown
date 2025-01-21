@@ -1,7 +1,5 @@
-import { ChangeEventHandler } from 'react'
-
 interface InputProps {
-  onChange: ChangeEventHandler<HTMLInputElement>
+  onChange: (value: string) => void
   value: string
   type?: 'text' | 'datetime-local'
   id?: string
@@ -24,7 +22,7 @@ export const Input = (props: InputProps) => {
       type={type}
       value={value}
       required={isRequired}
-      onChange={onChange}
+      onChange={(event) => onChange(event.target.value)}
     />
   )
 }
