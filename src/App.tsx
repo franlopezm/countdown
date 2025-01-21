@@ -3,6 +3,7 @@ import { RouteSwitch, Route } from './Router'
 import Navbar from './Navbar'
 import HomeView from './HomeView'
 import FullScreenView from './FullScreenView'
+import CreateView from './CreateView'
 
 function App() {
   return (
@@ -10,14 +11,16 @@ function App() {
       <Navbar />
 
       <div className='px-10 md:px-24 xl:px-36 2xl:px-52 pb-10 pt-12'>
-        <RouteSwitch>
+        <RouteSwitch
+          notFoundText='Lo sentimos, la página a la que desea acceder no existe.'
+        >
           <Route
             path={ROUTES.home}
             component={<HomeView />}
           />
           <Route
             path={ROUTES.new}
-            component={<div>Nuevo</div>}
+            component={<CreateView />}
           />
           <Route
             path={ROUTES.view}

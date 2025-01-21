@@ -1,5 +1,5 @@
-import { MouseEvent, ReactNode, useCallback } from "react"
-import { routerUtils } from "../utils"
+import { MouseEvent, ReactNode, useCallback } from 'react'
+import { routerUtils } from '../utils'
 
 interface RouteLinkProps {
   to: string
