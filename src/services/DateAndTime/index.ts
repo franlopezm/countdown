@@ -78,6 +78,13 @@ export class DateAndTime {
     }
   }
 
+  static isOlder(dateStart: DateAndTime, dateEnd: DateAndTime): boolean {
+    const utcStart = dateStart.dateUTC
+    const utcEnd = dateEnd.dateUTC
+
+    return utcStart > utcEnd
+  }
+
   get date(): DateTime {
     return this._date
   }
@@ -91,6 +98,6 @@ export class DateAndTime {
   }
 
   get isoDate(): string {
-    return this._date.toISO({ includeOffset: false }) || ''
+    return this._date.toFormat("yyyy-LL-dd'T'T") || ''
   }
 }
