@@ -6,10 +6,15 @@ import { DateAndTime } from '../services/DateAndTime'
 import { TimeBetweenType } from '../services/DateAndTime/interfaces'
 import FullScreenContainer from './FullScreenContainer'
 
-const FullScreenView = () => {
-  const { dates, removeDate } = useDateContext()
+interface StateValues {
+  isSaveItem: boolean
+  item: DateContextItem
+}
 
-  const [state, setState] = useState<DateContextItem>()
+const FullScreenView = () => {
+  const { dates, removeDate, addDate } = useDateContext()
+
+  const [state, setState] = useState<StateValues>()
 
   useEffect(
     () => {
@@ -26,7 +31,8 @@ const FullScreenView = () => {
 
         if (date) {
           setState({
-            ...date
+            isSaveItem: true,
+            item: { ...date }
           })
           return
         }
@@ -42,9 +48,12 @@ const FullScreenView = () => {
       const viewPath = `${window.location.pathname}${search}`
 
       setState({
-        title, type, viewPath,
-        id: '',
-        date: dateTime,
+        isSaveItem: false,
+        item: {
+          title, type, viewPath,
+          id: id || '',
+          date: dateTime
+        }
       })
     }, [dates]
   )
@@ -54,8 +63,10 @@ const FullScreenView = () => {
       {
         state ? (
           <FullScreenContainer
-            dateItem={state}
+            dateItem={state.item}
+            isSaveItem={state.isSaveItem}
             onDelete={removeDate}
+            onSave={addDate}
           />
         ) : null
       }
