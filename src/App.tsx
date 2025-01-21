@@ -9,7 +9,7 @@ function App() {
     <div className='bg-white w-full h-screen'>
       <Navbar />
 
-      <div className='px-10 md:px-32 xl:px-36 2xl:px-52 py-8'>
+      <div className='px-10 md:px-24 xl:px-36 2xl:px-52 pb-10 pt-12'>
         <RouteSwitch>
           <Route
             path={ROUTES.home}
