@@ -5,6 +5,7 @@ import FullScreenButton from '../../../Buttons/FullScreenButton'
 import TrashButton from '../../../Buttons/TrashButton'
 import CardNumber from './CardNumber'
 import { routerUtils } from '../../../Router'
+import MenuItem from './MenuItem'
 
 interface DateItemProps {
   duration: DurationObject
@@ -118,6 +119,8 @@ export const DateItem = (props: DateItemProps) => {
                 />
               ) : null
             }
+
+            <MenuItem />
           </div>
         ) : null
       }

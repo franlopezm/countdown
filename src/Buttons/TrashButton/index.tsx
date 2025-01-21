@@ -1,6 +1,5 @@
-import { IconSize } from "../../Icons/interfaces"
-import TrashIcon from "../../Icons/TrashIcon"
-import IconButton from "../IconButton"
+import { IconSize, IconWrapper, TrashIcon } from '../../Icons'
+import IconButton from '../IconButton'
 
 interface TrashButtonProps {
   onClick: () => void
@@ -23,7 +22,11 @@ const TrashButton = (props: TrashButtonProps) => {
     <IconButton
       onClick={onDelete}
       iconClassNames="hover:text-red-800"
-      icon={<TrashIcon size={size} />}
+      icon={
+        <IconWrapper size={size}>
+          <TrashIcon />
+        </IconWrapper>
+      }
       title="Eliminar"
     />
   )

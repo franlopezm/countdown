@@ -4,9 +4,8 @@ import { DateContextItem, DateItemCreate } from '../DateContainer/context/DateCo
 import { DateAndTime } from '../services/DateAndTime'
 import { DateItem } from '../DateContainer/components/DateItem'
 import { Button } from '../Buttons/Button'
+import { BookmarkIcon, ExclamationCircleIcon, IconWrapper } from '../Icons'
 import useTimer from '../shared/hooks/useTimer'
-import Bookmark from '../Icons/Bookmark'
-import ExclamationCircleIcon from '../Icons/ExclamationCircleIcon'
 
 interface FullScreenContainerProps {
   dateItem: DateContextItem
@@ -58,9 +57,15 @@ const FullScreenContainer = (props: FullScreenContainerProps) => {
         className='mt-8 flex justify-center items-center text-base text-slate-700'
       >
         {
-          isSaveItem
-            ? <Bookmark className='mr-2 text-green-700' />
-            : <ExclamationCircleIcon className='mr-2 text-red-700' />
+          isSaveItem ? (
+            <IconWrapper className='mr-2 text-green-700'>
+              <BookmarkIcon />
+            </IconWrapper>
+          ) : (
+            <IconWrapper className='mr-2 text-red-700'>
+              <ExclamationCircleIcon />
+            </IconWrapper>
+          )
         }
         {
           isSaveItem

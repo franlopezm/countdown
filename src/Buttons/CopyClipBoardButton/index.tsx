@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react'
 
-import { IconSize } from '../../Icons/interfaces'
-import ClipboardIcon from '../../Icons/ClipboardIcon'
+import { IconWrapper, ClipboardIcon, type IconSize } from '../../Icons'
 import IconButton from '../IconButton'
 
 interface CopyClipBoardButtonProps {
@@ -37,7 +36,11 @@ const CopyClipBoardButton = (props: CopyClipBoardButtonProps) => {
       <IconButton
         onClick={onClick}
         iconClassNames="hover:text-sky-700"
-        icon={<ClipboardIcon size={size} />}
+        icon={
+          <IconWrapper size={size}>
+            <ClipboardIcon />
+          </IconWrapper>
+        }
         title={title || 'Copiar'}
       />
       {

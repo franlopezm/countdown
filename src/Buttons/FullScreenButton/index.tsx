@@ -1,8 +1,7 @@
 import { useCallback } from 'react'
 
 import { routerUtils } from '../../Router'
-import { IconSize } from '../../Icons/interfaces'
-import FullScreenIcon from '../../Icons/FullScreenIcon'
+import { FullScreenIcon, IconWrapper, type IconSize } from '../../Icons'
 import IconButton from '../IconButton'
 
 interface FullScreenButtonProps {
@@ -23,7 +22,11 @@ const FullScreenButton = (props: FullScreenButtonProps) => {
     <IconButton
       onClick={onFullScreen}
       iconClassNames="hover:text-sky-700"
-      icon={<FullScreenIcon size={size} />}
+      icon={
+        <IconWrapper size={size}>
+          <FullScreenIcon />
+        </IconWrapper>
+      }
       title='Ver a pantalla completa'
     />
   )

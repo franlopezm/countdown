@@ -1,7 +1,6 @@
 import { ROUTES } from '../config/constants'
 import { useRouter } from '../Router'
-import HomeIcon from '../Icons/HomeIcon'
-import PlusIcon from '../Icons/PlusIcon'
+import { IconWrapper, HomeIcon, PlusIcon } from '../Icons'
 import NavbarItem from './NavbarItem'
 
 const Navbar = () => {
@@ -20,7 +19,9 @@ const Navbar = () => {
           isActive={path === ROUTES.home}
           title="Inicio"
           icon={
-            <HomeIcon size="size-5" className="mr-1.5" />
+            <IconWrapper size="size-5" className="mr-1.5">
+              <HomeIcon />
+            </IconWrapper>
           }
         />
         <NavbarItem
@@ -28,7 +29,9 @@ const Navbar = () => {
           isActive={path === ROUTES.new}
           title="Crear"
           icon={
-            <PlusIcon size="size-5" className="mr-1" />
+            <IconWrapper size="size-5" className="mr-1.5">
+              <PlusIcon />
+            </IconWrapper>
           }
         />
       </div>
