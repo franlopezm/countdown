@@ -37,23 +37,24 @@ export const DateItem = (props: DateItemProps) => {
 
   const titleText = getTitle({ title, type })
 
+
   return (
     <div
-      className={`mb-4 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className}`}
+      className={`mb-4 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:mr-0 group-[]/datelarge:shadow-lg`}
     >
-      <p className="font-bold text-sm text-sky-700">
+      <p className="font-bold text-sm text-sky-700 group-[]/datelarge:text-base">
         {titleText}
       </p>
       {
         dateText
           ? (
-            <p className='text-base font-normal text-slate-600 mt-1'>
+            <p className='text-base font-normal text-slate-600 mt-1 group-[]/datelarge:mt-2 group-[]/datelarge:text-lg'>
               {dateText}
             </p>
           ) : null
       }
 
-      <div className='flex justify-between content-between mt-2'>
+      <div className='flex justify-between content-between mt-2 group-[]/datelarge:mt-4'>
         <CardNumber
           title='Años'
           number={duration.years}
@@ -89,7 +90,7 @@ export const DateItem = (props: DateItemProps) => {
       {
         onDelete || sharePath || fullScreenPath ? (
           <div
-            className='absolute top-3 right-4'
+            className='absolute top-3 right-4 group-[]/datelarge:top-4 group-[]/datelarge:right-7'
           >
             {
               fullScreenPath ? (
