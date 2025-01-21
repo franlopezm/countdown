@@ -1,5 +1,7 @@
 import TimezoneSelect, { ITimezoneOption } from 'react-timezone-select'
 
+export type TimezoneOption = ITimezoneOption
+
 import { Label } from './Label'
 
 interface SelectTimezoneProps {
