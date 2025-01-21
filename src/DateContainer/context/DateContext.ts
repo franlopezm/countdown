@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 
+import { PartialBy } from '../../shared/interfaces'
 import { TimeBetweenType } from '../../services/DateAndTime/interfaces'
 import { DateAndTime } from '../../services/DateAndTime'
 
@@ -11,7 +12,7 @@ export interface DateContextItem {
   viewPath: string
 }
 
-export type DateItemCreate = Omit<DateContextItem, 'id'>
+export type DateItemCreate = PartialBy<Omit<DateContextItem, 'viewPath'>, 'id'>
 
 export interface DateContextValues {
   dates: DateContextItem[]

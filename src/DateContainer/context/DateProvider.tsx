@@ -44,7 +44,8 @@ export const DateProvider = ({ children }: { children: ReactNode }) => {
         type: data.type,
         date: data.date.isoDate,
         timezone: data.date.zone,
-        title: data.title || ''
+        title: data.title || '',
+        id: data.id
       })
 
       const viewPath = routerUtils.getViewPath(item)
