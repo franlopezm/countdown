@@ -1,4 +1,4 @@
-# Timers
+# Timers v2
 
 Application that allows you to create, save and share timers
 
