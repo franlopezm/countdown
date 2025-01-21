@@ -1,4 +1,4 @@
-import { IconProps } from "./interfaces"
+import { IconProps } from './interfaces'
 
 const ClipboardIcon = (props: IconProps) => {
   const { size = 'size-6', className } = props
