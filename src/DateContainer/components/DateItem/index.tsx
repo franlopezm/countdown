@@ -16,6 +16,7 @@ interface DateItemProps {
   isDisabled?: boolean
   onDelete?: () => void
   sharePath?: string
+  classContainer?: string
 }
 
 const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): string => {
@@ -29,7 +30,7 @@ const getTitle = ({ title, type }: { title?: string, type?: TimeBetweenType }): 
 export const DateItem = (props: DateItemProps) => {
   const {
     title, dateText, duration, isDisabled = false, onDelete,
-    sharePath, type, fullScreenPath
+    sharePath, type, fullScreenPath, classContainer = ''
   } = props
 
   const className = isDisabled
@@ -41,7 +42,7 @@ export const DateItem = (props: DateItemProps) => {
 
   return (
     <div
-      className={`mb-4 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:mr-0 group-[]/datelarge:shadow-lg`}
+      className={`mb-4 mr-4 p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:mr-0 group-[]/datelarge:shadow-lg ${classContainer}`}
     >
       <p className="font-bold text-sm text-sky-700 group-[]/datelarge:text-base">
         {titleText}

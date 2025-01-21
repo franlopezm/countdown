@@ -5,7 +5,8 @@ export interface ButtonProps {
   title: string
   onClick?: () => void
   size?: SizeButton
-  type?: ColorButton
+  color?: ColorButton
+  type?: 'button' | 'submit'
   className?: string
   isDisabled?: boolean
 }
@@ -13,13 +14,13 @@ export interface ButtonProps {
 export const Button = (props: ButtonProps) => {
   const {
     onClick, title = '', size = 'btn-medium', isDisabled = false,
-    type = 'btn-primary', className = ''
+    color = 'btn-primary', className = '', type = 'button'
   } = props
 
   return (
     <button
-      type="button"
-      className={`${size} ${type} ${className}`}
+      type={type}
+      className={`${size} ${color} ${className}`}
       onClick={onClick}
       disabled={isDisabled}
     >

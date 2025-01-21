@@ -17,7 +17,7 @@ const LinkButton = (props: LinkButtonProps) => {
         size={size}
         isDisabled={isDisabled}
         className={className}
-        type='btn-link'
+        color='btn-link'
       />
     </RouteLink>
   )
