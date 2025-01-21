@@ -44,14 +44,18 @@ export class DateAndTime {
   /**
    * Normaliza datetime for locale string
    */
-  format(): string {
+  format(options?: { displaySeconds?: boolean }): string {
+    const { displaySeconds = false } = options || {}
+
     return this.date.toLocaleString({
       year: 'numeric',
       month: 'long',
       day: 'numeric',
       hour: 'numeric',
       minute: '2-digit',
-      second: '2-digit'
+      ...displaySeconds
+        ? { second: '2-digit' }
+        : {}
     })
   }
 

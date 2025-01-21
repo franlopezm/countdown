@@ -13,7 +13,7 @@ export const CurrentDateBox = (props: CurrentDateBoxProps) => {
         Fecha actual:
       </h2>
       <h3 className='text-lg font-normal text-slate-600 mt-1'>
-        {date.format()}
+        {date.format({ displaySeconds: true })}
       </h3>
     </div>
   )
