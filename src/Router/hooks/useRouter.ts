@@ -1,6 +1,6 @@
-import { useContext } from "react"
+import { useContext } from 'react'
 
-import { RouterContext } from "../context/RouterContext"
+import { RouterContext } from '../context/RouterContext'
 
 export const useRouter = () => {
   const { path } = useContext(RouterContext)

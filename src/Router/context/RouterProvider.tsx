@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from 'react'
 
 import { RouterContext } from './RouterContext'
 
@@ -13,10 +13,10 @@ export const RouterProvider = ({ children }: { children: ReactNode }) => {
         setPath(window.location.pathname)
       }
 
-      window.addEventListener("popstate", onLocationChange)
+      window.addEventListener('popstate', onLocationChange)
 
       return () => {
-        window.removeEventListener("popstate", onLocationChange)
+        window.removeEventListener('popstate', onLocationChange)
       }
     }, []
   )
