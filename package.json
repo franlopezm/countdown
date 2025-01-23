@@ -10,7 +10,9 @@
   "packageManager": "pnpm@10.0.0",
   "scripts": {
     "dev": "vite",
+    "dev:demo": "pnpm dev --mode demo",
     "build": "tsc -b && vite build",
+    "build:demo": "pnpm build --mode demo",
     "lint": "eslint ./src",
     "lint:fix": "pnpm lint --fix",
     "preview": "vite preview",
