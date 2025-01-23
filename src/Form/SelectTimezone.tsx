@@ -41,8 +41,8 @@ export const SelectTimezone = (props: SelectTimezoneProps) => {
               return stylecss
             },
             dropdownIndicator(props) {
-              if (props.isFocused) return '!text-slate-500 !py-1.5 !px-2'
-              return '!text-slate-300 !py-1.5 !px-2'
+              if (props.isFocused) return '!text-slate-500 !py-2 !px-2'
+              return '!text-slate-300 !py-2 !px-2'
             },
             indicatorSeparator() {
               return '!bg-slate-300'
