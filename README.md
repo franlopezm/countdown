@@ -30,8 +30,17 @@ Application that allows you to create, save and share timers
 
 ---
 
-### Run the project in development
+### Run the project in development mode
 
-1. Download the repository
-2. Install dependencies `pnpm install`
-3. Run `pnpm dev`
+1. Download the repository.
+2. Install dependencies `pnpm install`.
+3. Run `pnpm dev`.
+
+
+### Run the project in demo mode
+Inserts three timers when opening the URL, when there is no data in the browser Local Storage.
+
+1. Download the repository.
+2. Install dependencies `pnpm install`.
+3. Set `VITE_LOAD_DEMO` environment variable to "true", in the `.env.demo` file.
+4. Run `pnpm dev:demo`.
