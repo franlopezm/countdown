@@ -102,6 +102,14 @@ export class DateAndTime {
   }
 
   get isoDate(): string {
-    return this._date.toFormat("yyyy-LL-dd'T'T") || ''
+    return this._date.toFormat("yyyy-LL-dd'T'HH:mm") || ''
+  }
+
+  get toISODate(): string {
+    return this._date.toFormat('yyyy-LL-dd') || ''
+  }
+
+  get toISOTime(): string {
+    return this._date.toFormat('HH:mm') || ''
   }
 }

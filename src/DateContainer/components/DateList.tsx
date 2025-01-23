@@ -39,6 +39,7 @@ export const DateList = (props: DateListProps) => {
               isDisabled={itemType !== type}
               onDelete={() => removeDate(id)}
               sharePath={viewPath}
+              classContainer='mb-4 mr-4'
             />
           )
         })

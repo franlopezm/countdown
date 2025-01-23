@@ -10,7 +10,7 @@ interface LabelProps {
 
 export const Label = (props: LabelProps) => {
   const {
-    children, htmlFor, className, isRequired = false,
+    children, htmlFor, className = '', isRequired = false,
     onClick
   } = props
 

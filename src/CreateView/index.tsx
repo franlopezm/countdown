@@ -18,12 +18,18 @@ const CreateView = () => {
   const { addDate } = useDateContext()
 
   const onSetDate = useCallback(
-    (date?: string, timezone?: string) => {
+    (params: { date?: string, timezone?: string, time?: string }) => {
+      const { date, timezone, time } = params
+      if (!date && !timezone && !time) return
+
       const cDate = new DateAndTime()
 
       setDate((oldDate) => {
+        const d = date || oldDate.toISODate
+        const t = time || oldDate.toISOTime
+
         const newDate = new DateAndTime(
-          date || oldDate.isoDate,
+          `${d}T${t}`,
           timezone || oldDate.zone
         )
 
@@ -41,15 +47,21 @@ const CreateView = () => {
     }, []
   )
 
-  const onDateTime = useCallback(
+  const onDate = useCallback(
     (value: string) => {
-      onSetDate(value)
+      onSetDate({ date: value })
+    }, [onSetDate]
+  )
+
+  const onTime = useCallback(
+    (value: string) => {
+      onSetDate({ time: value })
     }, [onSetDate]
   )
 
   const onTimeZone = useCallback(
     (timezone: TimezoneOption) => {
-      onSetDate('', timezone.value)
+      onSetDate({ timezone: timezone.value })
     }, [onSetDate]
   )
 
@@ -87,37 +99,51 @@ const CreateView = () => {
           />
         </div>
         <div
-          className='flex'
+          className='flex justify-between'
         >
           <div
-            className='w-1/2'
+            className='w-56'
           >
             <Label
               isRequired
-              htmlFor='datetime'
+              htmlFor='date'
             >
-              Fecha y hora:
+              Selecciona la Fecha:
             </Label>
             <Input
               isRequired
-              id='datetime'
-              className='w-56'
-              value={date.isoDate}
-              onChange={onDateTime}
-              type='datetime-local'
+              id='date'
+              value={date.toISODate}
+              onChange={onDate}
+              type='date'
             />
           </div>
 
           <div
-            className='w-1/2'
+            className='w-44'
           >
-            <SelectTimezone
-              className='w-60'
-              id='select-timezone'
-              value={date.zone}
-              onChange={onTimeZone}
+            <Label
+              isRequired
+              htmlFor='time'
+            >
+              Selecciona la Hora:
+            </Label>
+            <Input
+              isRequired
+              id='time'
+              value={date.toISOTime}
+              onChange={onTime}
+              type='time'
             />
           </div>
+        </div>
+
+        <div>
+          <SelectTimezone
+            id='select-timezone'
+            value={date.zone}
+            onChange={onTimeZone}
+          />
         </div>
 
         <div
