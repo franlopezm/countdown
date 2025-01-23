@@ -19,10 +19,10 @@ importers:
         version: 19.0.0(react@19.0.0)
       react-select:
         specifier: ^5.9.0
-        version: 5.9.0(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 5.9.0(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-timezone-select:
         specifier: ^3.2.8
-        version: 3.2.8(react-dom@19.0.0(react@19.0.0))(react-select@5.9.0(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+        version: 3.2.8(react-dom@19.0.0(react@19.0.0))(react-select@5.9.0(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       uuid:
         specifier: ^11.0.5
         version: 11.0.5
@@ -34,11 +34,11 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2
       '@types/react':
-        specifier: ^19.0.7
-        version: 19.0.7
+        specifier: ^19.0.8
+        version: 19.0.8
       '@types/react-dom':
         specifier: ^19.0.3
-        version: 19.0.3(@types/react@19.0.7)
+        version: 19.0.3(@types/react@19.0.8)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@6.0.11(jiti@1.21.7)(yaml@2.7.0))
@@ -590,8 +590,8 @@ packages:
     peerDependencies:
       '@types/react': '*'
 
-  '@types/react@19.0.7':
-    resolution: {integrity: sha512-MoFsEJKkAtZCrC1r6CM8U22GzhG7u2Wir8ons/aCKH6MBdD1ibV24zOSSkdZVUKqN5i396zG5VKLYZ3yaUZdLA==}
+  '@types/react@19.0.8':
+    resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
 
   '@typescript-eslint/eslint-plugin@8.21.0':
     resolution: {integrity: sha512-eTH+UOR4I7WbdQnG4Z48ebIA6Bgi7WO8HvFEneeYBxG8qCOYgTOFPSg6ek9ITIDvGjDQzWHcoWHCDO2biByNzA==}
@@ -1688,7 +1688,7 @@ snapshots:
 
   '@emotion/memoize@0.9.0': {}
 
-  '@emotion/react@11.14.0(@types/react@19.0.7)(react@19.0.0)':
+  '@emotion/react@11.14.0(@types/react@19.0.8)(react@19.0.0)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@emotion/babel-plugin': 11.13.5
@@ -1700,7 +1700,7 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       react: 19.0.0
     optionalDependencies:
-      '@types/react': 19.0.7
+      '@types/react': 19.0.8
     transitivePeerDependencies:
       - supports-color
 
@@ -1992,15 +1992,15 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
-  '@types/react-dom@19.0.3(@types/react@19.0.7)':
+  '@types/react-dom@19.0.3(@types/react@19.0.8)':
     dependencies:
-      '@types/react': 19.0.7
+      '@types/react': 19.0.8
 
-  '@types/react-transition-group@4.4.12(@types/react@19.0.7)':
+  '@types/react-transition-group@4.4.12(@types/react@19.0.8)':
     dependencies:
-      '@types/react': 19.0.7
+      '@types/react': 19.0.8
 
-  '@types/react@19.0.7':
+  '@types/react@19.0.8':
     dependencies:
       csstype: 3.1.3
 
@@ -2685,28 +2685,28 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react-select@5.9.0(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-select@5.9.0(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@babel/runtime': 7.26.0
       '@emotion/cache': 11.14.0
-      '@emotion/react': 11.14.0(@types/react@19.0.7)(react@19.0.0)
+      '@emotion/react': 11.14.0(@types/react@19.0.8)(react@19.0.0)
       '@floating-ui/dom': 1.6.13
-      '@types/react-transition-group': 4.4.12(@types/react@19.0.7)
+      '@types/react-transition-group': 4.4.12(@types/react@19.0.8)
       memoize-one: 6.0.0
       prop-types: 15.8.1
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       react-transition-group: 4.4.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      use-isomorphic-layout-effect: 1.2.0(@types/react@19.0.7)(react@19.0.0)
+      use-isomorphic-layout-effect: 1.2.0(@types/react@19.0.8)(react@19.0.0)
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
 
-  react-timezone-select@3.2.8(react-dom@19.0.0(react@19.0.0))(react-select@5.9.0(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0):
+  react-timezone-select@3.2.8(react-dom@19.0.0(react@19.0.0))(react-select@5.9.0(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      react-select: 5.9.0(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-select: 5.9.0(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       spacetime: 7.7.0
       timezone-soft: 1.5.2
 
@@ -2903,11 +2903,11 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-isomorphic-layout-effect@1.2.0(@types/react@19.0.7)(react@19.0.0):
+  use-isomorphic-layout-effect@1.2.0(@types/react@19.0.8)(react@19.0.0):
     dependencies:
       react: 19.0.0
     optionalDependencies:
-      '@types/react': 19.0.7
+      '@types/react': 19.0.8
 
   util-deprecate@1.0.2: {}
 
