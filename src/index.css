@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+input:is([type="date"],[type="time"])::-webkit-datetime-edit {
+  padding: 0;
+}
+
 @layer components {
   .before-arrow-bottom-center {
     @apply
