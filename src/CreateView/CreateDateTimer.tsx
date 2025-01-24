@@ -1,16 +1,14 @@
 import { DateItem } from '../DateContainer/components/DateItem'
 import { DateAndTime } from '../services/DateAndTime'
-import { TimeBetweenType } from '../services/DateAndTime/interfaces'
 import useTimer from '../shared/hooks/useTimer'
 
 interface CreateDateTimerProps {
   date: DateAndTime
   title?: string
-  type?: TimeBetweenType
 }
 
 const CreateDateTimer = (props: CreateDateTimerProps) => {
-  const { date, title, type } = props
+  const { date, title } = props
 
   const [currentDate] = useTimer()
 
@@ -22,7 +20,7 @@ const CreateDateTimer = (props: CreateDateTimerProps) => {
       dateText={date.format()}
       title={title}
       duration={durationInfo.duration}
-      type={type}
+      type={durationInfo.type}
     />
   )
 }

@@ -2,7 +2,6 @@ import { FormEvent, useCallback, useState } from 'react'
 
 import { routerUtils } from '../Router'
 import { DateAndTime } from '../services/DateAndTime'
-import { TimeBetweenType } from '../services/DateAndTime/interfaces'
 import { Button } from '../Buttons/Button'
 import { SelectTimezone, TimezoneOption } from '../Form/SelectTimezone'
 import { Label } from '../Form/Label'
@@ -13,7 +12,6 @@ import CreateDateTimer from './CreateDateTimer'
 const CreateView = () => {
   const [date, setDate] = useState<DateAndTime>(new DateAndTime())
   const [title, setTitle] = useState('')
-  const [type, setType] = useState<TimeBetweenType>('since')
 
   const { addDate } = useDateContext()
 
@@ -21,8 +19,6 @@ const CreateView = () => {
     (params: { date?: string, timezone?: string, time?: string }) => {
       const { date, timezone, time } = params
       if (!date && !timezone && !time) return
-
-      const cDate = new DateAndTime()
 
       setDate((oldDate) => {
         const d = date || oldDate.toISODate
@@ -32,9 +28,6 @@ const CreateView = () => {
           `${d}T${t}`,
           timezone || oldDate.zone
         )
-
-        const isOlder = DateAndTime.isOlder(cDate, newDate)
-        setType(isOlder ? 'since' : 'until')
 
         return newDate
       })
@@ -68,7 +61,13 @@ const CreateView = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    addDate({ title, date, type })
+    const cDate = new DateAndTime()
+    const isOlder = DateAndTime.isOlder(cDate, date)
+
+    addDate({
+      title, date,
+      type: isOlder ? 'since' : 'until'
+    })
 
     routerUtils.goTo('/')
   }
@@ -155,7 +154,6 @@ const CreateView = () => {
           <CreateDateTimer
             date={date}
             title={title}
-            type={type}
           />
         </div>
 

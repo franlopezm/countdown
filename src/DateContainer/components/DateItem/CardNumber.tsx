@@ -10,9 +10,9 @@ interface ClassNameParams {
 
 const getClassName = (params: ClassNameParams): string => {
   const { isDisabled } = params
-  if (isDisabled) return 'bg-neutral-500'
+  if (isDisabled) return 'text-neutral-200 bg-neutral-500'
 
-  return ''
+  return 'text-slate-700'
 }
 
 const CardNumber = (props: CardNumberProps) => {
@@ -26,7 +26,7 @@ const CardNumber = (props: CardNumberProps) => {
       </div>
       <div
         // shadow-md border border-slate-05
-        className={`rounded text-slate-700 ${className} text-xl tracking-wide p-1.5 text-center min-w-16 group-[]/datelarge:text-3xl group-[]/datelarge:min-w-16`}
+        className={`rounded ${className} text-xl tracking-wide p-1.5 text-center min-w-16 group-[]/datelarge:text-3xl group-[]/datelarge:min-w-16`}
       >
         {number}
       </div>

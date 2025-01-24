@@ -1,12 +1,12 @@
 # Timers v2
 
-Application that allows you to create, save and share timers
+Frontend application SPA that allows you to create, save and share timers.
 
-<!-- * <a href="https://franlopezm.github.io/countdown/#/ZW5kRGF0ZT0yMDIxLTAxLTIxVDIxOjAwOjAwJnRpbWV6b25lPUV1cm9wZS9NYWRyaWQmaW5pdERhdGU9MjAxOS0wOS0yOVQxMjowMDowMA==" target="_blank">franlopezm.github.io/countdown</a> -->
+See demo <a href="https://timers.franlo.dev" target="_blank">timers.franlo.dev</a>
 
 ---
 
-## Project Description
+### Project Description
 
 - **Creating** timers
 - **Save** timers you create or share
@@ -19,23 +19,13 @@ Application that allows you to create, save and share timers
 
 ---
 
-## Stack
-
-- pnpm v10
-- Vite v6
-- Reactjs v19
-- Typescript v5
-- Tailwindcss v3
-- Luxon v3
-
----
-
 ### Run the project in development mode
 
 1. Download the repository.
 2. Install dependencies `pnpm install`.
 3. Run `pnpm dev`.
 
+---
 
 ### Run the project in demo mode
 Inserts three timers when opening the URL, when there is no data in the browser Local Storage.
@@ -44,3 +34,14 @@ Inserts three timers when opening the URL, when there is no data in the browser 
 2. Install dependencies `pnpm install`.
 3. Set `VITE_LOAD_DEMO` environment variable to "true", in the `.env.demo` file.
 4. Run `pnpm dev:demo`.
+
+---
+
+### Stack
+
+- pnpm v10
+- Vite v6
+- Reactjs v19
+- Typescript v5
+- Tailwindcss v3
+- Luxon v3
