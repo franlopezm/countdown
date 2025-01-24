@@ -42,7 +42,7 @@ export const DateItem = (props: DateItemProps) => {
 
   return (
     <div
-      className={`p-4 px-6 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:shadow-lg ${classContainer}`}
+      className={`pt-5 pb-7 px-7 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:shadow-lg ${classContainer}`}
     >
       <p className="font-bold text-sm text-sky-700 group-[]/datelarge:text-base">
         {titleText}
@@ -50,7 +50,7 @@ export const DateItem = (props: DateItemProps) => {
       {
         dateText
           ? (
-            <p className='text-base font-normal text-slate-600 mt-1 group-[]/datelarge:mt-2 group-[]/datelarge:text-lg'>
+            <p className='flex items-center text-base font-normal text-slate-600 mt-1 group-[]/datelarge:mt-2 group-[]/datelarge:text-lg'>
               {dateText}
             </p>
           ) : null
@@ -122,6 +122,16 @@ export const DateItem = (props: DateItemProps) => {
             }
 
             <MenuItem />
+          </div>
+        ) : null
+      }
+
+      {
+        isDisabled ? (
+          <div
+            className='absolute bottom-4 -right-1.5 -rotate-45 rounded-md px-1.5 py-0.5 border-2 border-neutral-500 shadow-lg bg-neutral-50 text-xs text-slate-800'
+          >
+            Finalizado
           </div>
         ) : null
       }
