@@ -1,5 +1,5 @@
 import { MouseEvent, ReactNode, useCallback } from 'react'
-import { routerUtils } from '../utils'
+import { addHash, goTo } from '../utils'
 
 interface RouteLinkProps {
   to: string
@@ -14,14 +14,14 @@ export const RouteLink = (props: RouteLinkProps) => {
     (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
 
-      routerUtils.goTo(to)
+      goTo(to)
     }, [to]
   )
 
   return (
     <a
       className={className}
-      href={to}
+      href={addHash(to)}
       onClick={onClick}
     >
       {children}
