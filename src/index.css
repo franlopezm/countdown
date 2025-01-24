@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:is([type="date"],[type="time"])::-webkit-datetime-edit {
+  padding: 0;
+}
+
+@layer components {
+  .before-arrow-bottom-center {
+    @apply
+      before:content-[''] before:absolute
+      before:w-2.5 before:h-2.5
+      before:right-1/2 before:translate-x-1/2 before:rotate-45
+      before:-bottom-1/2 before:-translate-y-35-percentage
+      before:border-r-2 before:border-b-2 before:border-inherit
+      before:rounded-br-sm
+      before:bg-white
+  }
+
+  .btn-medium {
+    @apply rounded shadow-md px-4 py-2 text-base
+  }
+
+  .btn-large {
+    @apply rounded shadow-md px-5 py-2 text-lg
+  }
+
+  .btn-primary {
+    @apply text-neutral-100 bg-teal-700 hover:bg-teal-800 disabled:bg-neutral-500
+  }
+
+  .btn-link {
+    @apply text-neutral-100 bg-sky-600 hover:bg-sky-700 disabled:bg-neutral-500
+  }
+}
