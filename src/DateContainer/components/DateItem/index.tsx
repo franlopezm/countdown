@@ -42,7 +42,7 @@ export const DateItem = (props: DateItemProps) => {
 
   return (
     <div
-      className={`pt-5 pb-7 px-7 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:shadow-lg ${classContainer}`}
+      className={`py-5 px-7 max-w-max shadow-md border-2 rounded relative ${className} group-[]/datelarge:pt-5 group-[]/datelarge:px-8 group-[]/datelarge:shadow-lg ${classContainer}`}
     >
       <p className="font-bold text-sm text-sky-700 group-[]/datelarge:text-base">
         {titleText}

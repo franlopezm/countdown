@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import { getSearchParams, getViewPath } from '../Router/utils'
 import { DateContextItem } from '../DateContainer/context/DateContext'
 import { useDateContext } from '../DateContainer/hooks/useDateContext'
 import { DateAndTime } from '../services/DateAndTime'
@@ -18,7 +19,7 @@ const FullScreenView = () => {
 
   useEffect(
     () => {
-      const search = window.location.search
+      const search = getSearchParams()
 
       const params = new URLSearchParams(search.substring(1))
       const id = params.get('id')
@@ -45,7 +46,10 @@ const FullScreenView = () => {
       const type = params.get('type') as TimeBetweenType || 'since'
 
       const dateTime = new DateAndTime(date, timezone)
-      const viewPath = `${window.location.pathname}${search}`
+      const viewPath = getViewPath({
+        date, timezone, title, type,
+        id: id || ''
+      })
 
       setState({
         isSaveItem: false,

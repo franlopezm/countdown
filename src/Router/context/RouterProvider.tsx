@@ -1,19 +1,22 @@
 import { ReactNode, useEffect, useState } from 'react'
 
+import { getLocationPath, redirectToRouteHash } from '../utils'
 import { RouterContext } from './RouterContext'
 
 export const RouterProvider = ({ children }: { children: ReactNode }) => {
   const [path, setPath] = useState(() => {
-    return window.location.pathname
+    return getLocationPath()
   })
 
   useEffect(
     () => {
       const onLocationChange = () => {
-        setPath(window.location.pathname)
+        setPath(getLocationPath())
       }
 
       window.addEventListener('popstate', onLocationChange)
+
+      redirectToRouteHash()
 
       return () => {
         window.removeEventListener('popstate', onLocationChange)
