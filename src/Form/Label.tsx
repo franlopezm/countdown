@@ -16,7 +16,7 @@ export const Label = (props: LabelProps) => {
 
   return (
     <label
-      className={`block font-semibold text-sky-800 py-1 ${className}`}
+      className={`block font-semibold text-sky-800 py-0.5 md:py-1 text-sm md:text-base ${className}`}
       htmlFor={htmlFor}
       title={isRequired ? 'Campo requerido' : 'Campo opcional'}
       onClick={onClick}
@@ -26,7 +26,7 @@ export const Label = (props: LabelProps) => {
         isRequired
           ? (
             <span
-              className='font-bold px-1'
+              className='font-bold px-0.5 md:px-1'
             >
               *
             </span>

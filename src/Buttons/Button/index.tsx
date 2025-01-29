@@ -1,4 +1,4 @@
-type SizeButton = 'btn-medium' | 'btn-large'
+type SizeButton = 'btn-small' | 'btn-medium' | 'btn-large'
 type ColorButton = 'btn-primary' | 'btn-link'
 
 export interface ButtonProps {

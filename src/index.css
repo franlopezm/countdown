@@ -18,12 +18,16 @@ input:is([type="date"],[type="time"])::-webkit-datetime-edit {
       before:bg-white
   }
 
+  .btn-large {
+    @apply rounded shadow-md px-5 py-2 text-lg
+  }
+
   .btn-medium {
     @apply rounded shadow-md px-4 py-2 text-base
   }
 
-  .btn-large {
-    @apply rounded shadow-md px-5 py-2 text-lg
+  .btn-small {
+    @apply rounded shadow-md px-2 py-1.5 text-sm
   }
 
   .btn-primary {
