@@ -11,7 +11,11 @@ export default {
         sea: { 350: '#79b3b0' }
       },
       spacing: {
-        '35-percentage': '35.333333%'
+        '35-percentage': '35.333333%',
+        '16-percentage': '16.333333%'
+      },
+      fontSize: {
+        xxs: ['0.62rem', '0.75rem']
       }
     },
   },
