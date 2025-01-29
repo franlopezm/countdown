@@ -158,12 +158,11 @@ const CreateView = () => {
         </div>
 
         <div
-          className='mt-8 md:mt-10 flex justify-end'
+          className='mt-7 md:mt-10 flex justify-end'
         >
           <Button
             title='Guardar temporizador'
             type='submit'
-            size='btn-small'
           />
         </div>
       </form>

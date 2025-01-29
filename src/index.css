@@ -27,7 +27,7 @@ input:is([type="date"],[type="time"])::-webkit-datetime-edit {
   }
 
   .btn-small {
-    @apply rounded shadow-md px-2 py-1.5 text-sm
+    @apply rounded shadow-md px-2.5 py-1.5 text-sm
   }
 
   .btn-primary {
