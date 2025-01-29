@@ -15,7 +15,7 @@ const NavbarItem = (props: NavbarItemProps) => {
 
   return (
     <RouteLink
-      className={`text-xl mr-2 px-2.5 py-1 flex items-center rounded hover:bg-slate-200 ${className}`}
+      className={`text-base md:text-xl mr-1 md:mr-2 px-2 py-0.5 md:px-2.5 md:py-1 flex items-center rounded hover:bg-slate-200 ${className}`}
       to={to}
     >
       {
