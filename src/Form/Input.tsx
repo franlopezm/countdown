@@ -16,7 +16,7 @@ export const Input = (props: InputProps) => {
 
   return (
     <input
-      className={`px-3 py-2 mb-5 w-full rounded border-2 border-slate-300 text-slate-800 outline-offset-0 outline-0 focus:border-slate-500 text-sm ${className}`}
+      className={`px-1.5 md:px-3 py-1.5 md:py-2 mb-3 md:mb-5 w-full rounded border-2 border-slate-300 text-slate-800 outline-offset-0 outline-0 focus:border-slate-500 text-xs md:text-sm ${className}`}
       id={id}
       placeholder={placeholder}
       type={type}

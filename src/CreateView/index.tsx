@@ -76,10 +76,10 @@ const CreateView = () => {
     <div>
       <form
         onSubmit={onSubmit}
-        className='w-max'
+        className='w-full md:w-max'
       >
         <h2
-          className='mb-5 text-2xl text-slate-600 font-semibold'
+          className='mb-2 md:mb-5 text-xl md:text-2xl text-slate-600 font-semibold'
         >
           Crear Temporizador
         </h2>
@@ -98,10 +98,10 @@ const CreateView = () => {
           />
         </div>
         <div
-          className='flex justify-between'
+          className='flex justify-between flex-wrap'
         >
           <div
-            className='w-56'
+            className='w-full md:w-56'
           >
             <Label
               isRequired
@@ -119,7 +119,7 @@ const CreateView = () => {
           </div>
 
           <div
-            className='w-44'
+            className='w-full md:w-44'
           >
             <Label
               isRequired
@@ -146,7 +146,7 @@ const CreateView = () => {
         </div>
 
         <div
-          className='mt-1'
+          className='mt-0 md:mt-1'
         >
           <Label>
             Vista previa
@@ -158,7 +158,7 @@ const CreateView = () => {
         </div>
 
         <div
-          className='mt-10 flex justify-end'
+          className='mt-7 md:mt-10 flex justify-end'
         >
           <Button
             title='Guardar temporizador'

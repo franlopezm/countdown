@@ -46,7 +46,7 @@ const CopyClipBoardButton = (props: CopyClipBoardButtonProps) => {
       {
         isCopied ? (
           <div
-            className="absolute right-1/2 translate-x-1/2 -top-10 px-2 py-0.5 rounded-md border-2 border-sky-700 shadow-lg bg-neutral-50 text-xs text-slate-700 before-arrow-bottom-center"
+            className="absolute right-1/2 translate-x-1/2 -top-8 md:-top-10 px-1.5 md:px-2 py-0.5 rounded-md border-2 border-sky-700 shadow-lg bg-neutral-50 text-xxs md:text-xs text-slate-700 before-arrow-bottom-center"
           >
             Copiado
           </div>

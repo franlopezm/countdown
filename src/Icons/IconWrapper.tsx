@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type IconSize = 'size-5' | 'size-6'
+export type IconSize = 'size-4 md:size-5' | 'size-5 md:size-6' | 'size-5' | 'size-6'
 
 export interface IconWrapperProps {
   size?: IconSize

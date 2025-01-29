@@ -1,4 +1,4 @@
-type SizeButton = 'btn-medium' | 'btn-large'
+type SizeButton = 'btn-small md:btn-medium' | 'btn-small' | 'btn-medium' | 'btn-large'
 type ColorButton = 'btn-primary' | 'btn-link'
 
 export interface ButtonProps {
@@ -13,7 +13,7 @@ export interface ButtonProps {
 
 export const Button = (props: ButtonProps) => {
   const {
-    onClick, title = '', size = 'btn-medium', isDisabled = false,
+    onClick, title = '', size = 'btn-small md:btn-medium', isDisabled = false,
     color = 'btn-primary', className = '', type = 'button'
   } = props
 

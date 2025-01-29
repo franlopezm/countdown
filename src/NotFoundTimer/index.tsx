@@ -10,10 +10,10 @@ export const NotFoundTimer = (props: NotFoundTimerProps) => {
 
   return (
     <div
-      className='w-full mt-16 text-center'
+      className='w-full mt-8 md:mt-16 text-center'
     >
       <p
-        className='mb-8 text-xl text-slate-700'
+        className='mb-6 md:mb-8 text-base md:text-xl text-slate-700'
       >
         {text}
       </p>

@@ -41,7 +41,7 @@ const FullScreenContainer = (props: FullScreenContainerProps) => {
 
   return (
     <div
-      className='mx-auto group/datelarge max-w-max'
+      className='mx-auto md:group/datelarge max-w-max'
     >
       <DateItem
         isDisabled={type !== durationInfo.type}
@@ -54,28 +54,37 @@ const FullScreenContainer = (props: FullScreenContainerProps) => {
       />
 
       <div
-        className='mt-8 flex justify-center items-center text-base text-slate-700'
+        className='mt-6 md:mt-8 flex justify-center items-center text-xs md:text-base text-slate-700'
       >
         {
           isSaveItem ? (
-            <IconWrapper className='mr-2 text-green-700'>
+            <IconWrapper
+              size='size-5 md:size-6'
+              className='mr-1.5 md:mr-2 text-green-700'
+            >
               <BookmarkIcon />
             </IconWrapper>
           ) : (
-            <IconWrapper className='mr-2 text-red-700'>
+            <IconWrapper
+              size='size-5 md:size-6'
+              className='mr-1.5 md:mr-2 text-red-700'
+            >
               <ExclamationCircleIcon />
             </IconWrapper>
           )
         }
-        {
-          isSaveItem
-            ? 'Ya tienes este temporizador en tu lista de favoritos.'
-            : 'Este temporizador no se encuentra en tu lista de favoritos.'
-        }
+
+        <span>
+          {
+            isSaveItem
+              ? 'Ya tienes este temporizador en tu lista de favoritos.'
+              : 'Este temporizador no se encuentra en tu lista de favoritos.'
+          }
+        </span>
       </div>
 
       <div
-        className='mt-8 flex justify-end'
+        className='mt-6 md:mt-8 flex justify-end'
       >
         {
           !isSaveItem ? (

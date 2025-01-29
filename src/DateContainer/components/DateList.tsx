@@ -12,7 +12,7 @@ export const DateList = (props: DateListProps) => {
   const { dates, dateSize, removeDate } = useDateContext()
 
   return (
-    <div className='mt-8 flex flex-wrap justify-start'>
+    <div className='mt-5 md:mt-8 flex flex-wrap justify-start'>
       {
         dateSize === 0 ? (
           <NotFoundTimer
@@ -39,7 +39,7 @@ export const DateList = (props: DateListProps) => {
               isDisabled={itemType !== type}
               onDelete={() => removeDate(id)}
               sharePath={viewPath}
-              classContainer='mb-4 mr-4'
+              classContainer='mb-3 mr-0 md:mb-4 md:mr-4'
             />
           )
         })
