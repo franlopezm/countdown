@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, MouseEvent } from 'react'
 
 interface IconButtonProps {
   icon: ReactNode
@@ -15,7 +15,13 @@ const IconButton = (props: IconButtonProps) => {
       type='button'
       className={`p-0.5 text-slate-600 rounded border border-transparent hover:bg-slate-100 hover:border-slate-300 hover:shadow-sm ${iconClassNames}`}
       title={title}
-      onClick={onClick}
+      onClick={
+        (e: MouseEvent<HTMLButtonElement>) => {
+          e.stopPropagation()
+
+          onClick()
+        }
+      }
     >
       {icon}
     </button>
