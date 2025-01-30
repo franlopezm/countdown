@@ -1,5 +1,7 @@
+import { MouseEvent } from 'react'
+
 type SizeButton = 'btn-small md:btn-medium' | 'btn-small' | 'btn-medium' | 'btn-large'
-type ColorButton = 'btn-primary' | 'btn-link'
+type ColorButton = 'btn-primary' | 'btn-link' | 'btn-secondary' | 'btn-danger'
 
 export interface ButtonProps {
   title: string
@@ -21,7 +23,15 @@ export const Button = (props: ButtonProps) => {
     <button
       type={type}
       className={`${size} ${color} ${className}`}
-      onClick={onClick}
+      onClick={
+        onClick ?
+          (e: MouseEvent<HTMLButtonElement>) => {
+            e.stopPropagation()
+
+            onClick()
+          }
+          : undefined
+      }
       disabled={isDisabled}
     >
       {title}

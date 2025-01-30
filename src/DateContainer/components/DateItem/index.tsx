@@ -114,8 +114,9 @@ export const DateItem = (props: DateItemProps) => {
             {
               onDelete ? (
                 <TrashButton
-                  confirmTitle={`Está seguro de que desea eliminar el temporizador:\n\n${title}\n${dateText}\n`}
                   onClick={onDelete}
+                  modalTitle='Está seguro de que desea eliminar el temporizador:'
+                  modalContent={`${title}\n${dateText}`}
                   size='size-4 md:size-5'
                 />
               ) : null
