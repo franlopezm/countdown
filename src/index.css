@@ -34,7 +34,15 @@ input:is([type="date"],[type="time"])::-webkit-datetime-edit {
     @apply text-neutral-100 bg-teal-700 hover:bg-teal-800 disabled:bg-neutral-500
   }
 
+  .btn-secondary {
+    @apply text-neutral-700 bg-neutral-50 border border-neutral-500 hover:bg-neutral-300 disabled:bg-neutral-500
+  }
+
   .btn-link {
     @apply text-neutral-100 bg-sky-600 hover:bg-sky-700 disabled:bg-neutral-500
+  }
+
+  .btn-danger {
+    @apply text-neutral-100 bg-red-500 hover:bg-red-700 disabled:bg-neutral-500
   }
 }
